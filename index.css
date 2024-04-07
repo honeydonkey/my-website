@@ -10,10 +10,17 @@
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  --first-color: #E4FDFC;
+  /* --first-color: #E4FDFC;
   --first-color-dark: #3C3C3C;
   --first-color-darken: #0242424;
   --text-color: #FF4900;
+  --first-color-light: #EAE7E6;
+  --first-color-lighten: #FFFAFA; */
+
+  --first-color: #E4FDFC;
+  --first-color-dark: #704264;
+  --first-color-darken: #49243E;
+  --text-color: #DBAFA0;
   --first-color-light: #EAE7E6;
   --first-color-lighten: #FFFAFA;
 
