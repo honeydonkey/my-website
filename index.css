@@ -18,11 +18,11 @@
   --first-color-lighten: #FFFAFA; */
 
   --first-color: #E4FDFC;
-  --first-color-dark: #704264;
-  --first-color-darken: #49243E;
-  --text-color: #DBAFA0;
+  --first-color-dark: #1E56A0;
+  --first-color-darken: #163172;
+  --text-color: #F6F6F6;
   --first-color-light: #EAE7E6;
-  --first-color-lighten: #FFFAFA;
+  --first-color-lighten: #D6E4F0;
 
   --body-font: 'Poppins', sans-serif;
   --h1-font-size: 1.5rem;
