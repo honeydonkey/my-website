@@ -17,6 +17,9 @@
   --first-color-light: #EAE7E6;
   --first-color-lighten: #FFFAFA; */
 
+
+
+  --white:#FFFFFF;
   --bg:#1C1C27;
   --bgLight: #1C1E27;
   --primary:#854CE6;
@@ -25,7 +28,7 @@
   --card:#171721;
   --card_light: #191924;
   --button:#854CE6;
-  --white:#FFFFFF;
+  
   --black:#000000;
 
 
@@ -79,8 +82,8 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
-  background-color: var(--first-color-lighten);
-  color: var(--text-color);
+  background-color: var(--bg);
+  color: var(--white);
   line-height: 1.6;
 }
 
