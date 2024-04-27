@@ -231,7 +231,7 @@ img {
   height: 160px;
   background-color: var(--first-color-dark);
   border-radius: 50%;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: var(--mb-2);
 }
 
