@@ -189,17 +189,17 @@ img {
 .nav__link {
   font-size: 1rem;
   text-transform: uppercase;
-  color: var(--button);
+  color: var(--text_secondary);
   font-weight: var(--font-bold);
   transition: 0.3s;
 }
 
 .nav__link:hover {
-  color: var(--text_secondary);
+  color: var(--button);
 }
 
 .nav__toggle {
-  color: var(--button);
+  color: var(--text_secondary);
   font-size: 1.3rem;
   cursor: pointer;
 }
