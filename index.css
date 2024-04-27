@@ -170,7 +170,7 @@ img {
   padding: 3rem;
   display: flex;
   align-items: center;
-  background-color: var(--bg);
+  background-color: var(--white);
   transition: 0.5s;
 }
 
@@ -178,7 +178,7 @@ img {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  color: var(--button);
+  color: var(--black);
   cursor: pointer;
 }
 
@@ -189,7 +189,7 @@ img {
 .nav__link {
   font-size: 1rem;
   text-transform: uppercase;
-  color: var(--text_secondary);
+  color: var(--black);
   font-weight: var(--font-bold);
   transition: 0.3s;
 }
@@ -199,7 +199,7 @@ img {
 }
 
 .nav__toggle {
-  color: var(--text_secondary);
+  color: var(--button);
   font-size: 1.3rem;
   cursor: pointer;
 }
