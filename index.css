@@ -252,7 +252,7 @@ img {
 }
  
 .home__profession {
-  font-size: var(--small-font-size);
+  font-size: var(--h3-font-size);
   color: var(--text_secondary);
   margin-bottom: var(--mb-5);
 }
