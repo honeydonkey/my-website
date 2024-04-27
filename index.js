@@ -46,7 +46,7 @@ function scrollActive() {
 function sendEmail() {
   Email.send({
     SecureToken: "48e2deee-1b69-4d3f-a6a2-e03318e00677",
-    To : 'henryhein.hein@gmail.com',
+    To : 'mariannewong23000@gmail.com',
     From : document.getElementById('email').value,
     Subject : "New Inquiry!",
     Body : "Name :" + document.getElementById('username').value
