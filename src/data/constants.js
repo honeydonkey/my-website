@@ -1,20 +1,16 @@
 export const Bio = {
-  name: "Sanket Deshmukh",
+  name: "Marianne Wong",
   roles: [
-    "Full Stack Developer",
-    "Front-End Developer",
+    "Junior Security Analyst",
+    "Cybersecurity Awareness Enthusiast",
     "UI/UX Designer",
-    "Programmer",
   ],
   description:
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
-  github: "https://github.com/sanketdeshmukh13",
+  github: "https://github.com/honeydonkey",
   resume:
-    "https://www.dropbox.com/scl/fi/lu9zyntlj48dq3ymsor6f/07_sanket_deshmukh.pdf?rlkey=qspm4b3v01prpo9zw1g2s3t75&dl=0",
-  linkedin: "https://www.linkedin.com/in/sanket-deshmukh-36416b285",
-  // twitter: "https://twitter.com/RishavChanda",
-  insta: "https://www.instagram.com/sanket_deshmukh_13/",
-  facebook: "https://www.facebook.com/sanket.deshmukh.9803150",
+    "https://drive.google.com/file/d/1Qj46_tr_mB29DLiqcos4_X81L_XIEqob/view?usp=sharing",
+  linkedin: "https://https://www.linkedin.com/in/mwhm/",
 };
 
 export const skills = [
