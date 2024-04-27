@@ -225,18 +225,11 @@ img {
 }
 
 .home__img {
-  padding-top: 0.2rem;
-  padding-left: 0.2rem;
-  width: 160px;
-  height: 160px;
-  background-color: var(--first-color-dark);
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: var(--mb-2);
+
 }
 
 .home__img img {
-  width: 180px;
+  width: 155px;
 }
 
 .home__title {
