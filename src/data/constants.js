@@ -72,17 +72,8 @@ export const experiences = [
     role: " Junior Security Analyst",
     company: "Deriv Services Sdn. Bhd.",
     date: "Jan 2024 - present",
-    desc: "Conduct social engineering on employees to evaluate employees’ awareness."+ "\n" +
-    "Educate and train employees through phishing campaigns and trainings."+ "\n" +
-    "Read threat intelligence and communicate security requirements to relevant stakeholders."+ "\n" +
-    "Communicate latest cyber attacks through infographic to company-wide."+ "\n" +
-    "In charge of documenting team’s processes and internal team’s website."+ "\n" +
-    "Respond to security related inquiries to promote security awareness culture."+ "\n" +
-    "Collaborate with SOC team to investigate security alerts from CrowdStrike, Trellix, and reported phishing emails."+ "\n" +
-    "Review and update Information Security Policies for audit."+ "\n" +
-    "Work with Talent Development team to plan and create mandatory security trainings for new and existing employees."+ "\n" +
-    "Conducted quarterly network penetration testing using Nmap.",
-    skills: [
+    desc: "Conduct social engineering on employees to evaluate employees’ awareness.\n Educate and train employees through phishing campaigns and trainings. \n Read threat intelligence and communicate security requirements to relevant stakeholders. \n Communicate latest cyber attacks through infographic to company-wide. \n In charge of documenting team’s processes and internal team’s website. \n Respond to security related inquiries to promote security awareness culture. \n Collaborate with SOC team to investigate security alerts from CrowdStrike, Trellix, and reported phishing emails. \n Review and update Information Security Policies for audit. \n Work with Talent Development team to plan and create mandatory security trainings for new and existing employees. \n Conducted quarterly network penetration testing using Nmap."
+    ,skills: [
       "Javascript",
       "Python",
       "AWS",
@@ -130,49 +121,6 @@ export const experiences = [
       "MongoDB",
     ],
   },
-  // {
-  //   id: 2,
-  //   img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/girlScript.jpeg?alt=media&token=e656a621-cf3c-4230-bf0f-e74b4cec6035",
-  //   role: "Open Source Contributor ",
-  //   company: "GirlScript Summer of Code",
-  //   date: "May 2023 - Present",
-  //   desc: "Contributing to different open-source projects and learn from industry experts",
-  //   doc: "https://media.licdn.com/dms/image/D4D22AQGzSpgFaR4hsQ/feedshare-shrink_800/0/1684079632872?e=1687996800&v=beta&t=i0xWn_k32Oj9SxKfc6rARSbOghXD9Ge6WyEb2p2vvrc",
-  // },
-  // {
-  //   id: 3,
-  //   img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/gdsc.jpeg?alt=media&token=c162329c-efaa-4be8-a173-8d3f4c48ea70",
-  //   role: "Android Developer",
-  //   company: "DSC KIIT",
-  //   date: "Nov2021 - Present",
-  //   desc: "As an Android developer at the Google Developers Student Club (GDCS), I have had the opportunity to work on exciting projects and collaborate with talented developers who share my passion for technology. Through my involvement with GDCS, I have also had the opportunity to host and participate in numerous events, including hackathons, study jams, and workshops.",
-  //   skills: [
-  //     "Leadership",
-  //     "Mobile Application Development",
-  //     "Kotlin",
-  //     "XML",
-  //     "Figma",
-  //   ],
-  // },
-  // {
-  //   id: 4,
-  //   img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Rudraksha.jpeg?alt=media&token=8f83f41e-d0a1-486f-9c7f-dd4cd1d09e8d",
-  //   role: "Android Developer Intern",
-  //   company: "Rudraksha Welffare Foundation",
-  //   date: "June 2021 - Oct 2021",
-  //   desc: "As an Android Developer Intern at Rudraksha Welfare Foundation from June 2021 to October 2021, I gained valuable hands-on experience in application development. During my tenure, I contributed to the development of the application's back-end cloud functions using Firebase and implemented a front-end with the MVVM structure, which was designed using Figma. I also added a one-to-one video call feature, conceptualized new features, and optimized app performance. This internship helped me enhance my skills in Android development and gave me an opportunity to work in a collaborative team environment.",
-  //   skills: [
-  //     "Android",
-  //     "Java",
-  //     "Kotlin",
-  //     "XML",
-  //     "Node Js",
-  //     "Cloud Firestore",
-  //     "Firebase",
-  //     "Figma",
-  //   ],
-  //   doc: "https://firebasestorage.googleapis.com/v0/b/buckoid-917cf.appspot.com/o/WhatsApp%20Image%202023-05-05%20at%2012.07.39%20AM.jpeg?alt=media&token=9f0e1648-568b-422d-bd0b-1f125f722245",
-  // },
 ];
 
 export const education = [
@@ -238,20 +186,6 @@ export const projects = [
     category: "machine learning",
     github: "https://github.com/rishavchanda/Podstream",
     webapp: "https://podstream.netlify.app/",
-    // member: [
-    //   {
-    //     name: "Rishav Chanda",
-    //     img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-    //     linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-    //     github: "https://github.com/rishavchanda/",
-    //   },
-    //   {
-    //     name: "Upasana Chaudhuri",
-    //     img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-    //     linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-    //     github: "https://github.com/upasana0710",
-    //   },
-    // ],
   },
   {
     id: 1,
