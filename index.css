@@ -17,12 +17,18 @@
   --first-color-light: #EAE7E6;
   --first-color-lighten: #FFFAFA; */
 
-  --first-color: #222A35;
-  --first-color-dark: #854CE6;
-  --first-color-darken: #854CE6;
-  --text-color: #C8CFD8;
-  --first-color-light: #F2F5F7;
-  --first-color-lighten: #626970;
+  --bg:#1C1C27;
+  --bgLight: #1C1E27;
+  --primary:#854CE6;
+  --text_primary:#F2F3F4;
+  --text_secondary:#b1b2b3;
+  --card:#171721;
+  --card_light: #191924;
+  --button:#854CE6;
+  --white:#FFFFFF;
+  --black:#000000;
+
+
 
   --body-font: 'Poppins', sans-serif;
   --h1-font-size: 1.5rem;
