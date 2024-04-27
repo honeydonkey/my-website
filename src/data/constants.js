@@ -81,7 +81,7 @@ export const experiences = [
     "Collaborate with SOC team to investigate security alerts from CrowdStrike, Trellix, and reported phishing emails."+ "\n" +
     "Review and update Information Security Policies for audit."+ "\n" +
     "Work with Talent Development team to plan and create mandatory security trainings for new and existing employees."+ "\n" +
-    "Conducted quarterly network penetration testing using Nmap.", "\n" +
+    "Conducted quarterly network penetration testing using Nmap.",
     skills: [
       "Javascript",
       "Python",
