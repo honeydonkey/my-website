@@ -2,266 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="./index.css">
-  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-
-  <title>Marianne Portfolio</title>
+  <title>Cybersecurity Specialist Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles for color scheme */
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --text-color: #333;
+    }
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="l-header">
-    <nav class="nav bd-grid">
-      <div class="nav__toggle" id="nav-toggle">
-        <i class="bx bx-menu"></i>
-      </div>
-      <div>
-        <a href="#" class="nav__logo">Marianne</a>
-      </div>
-      <div class="nav__menu" id="nav-menu">
-        <div class="nav__close" id="nav-close">
-          <i class="bx bx-x"></i>
-        </div>
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-          <li class="nav__item"><a href="#education" class="nav__link">education</a></li>
-          <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
 
-  <!-- HOME -->
-  <main class="l-main">
-    <section class="home" id="home">
-      <div class="home__container bd-grid">
-        <div class="home__data">
-          <div class="home__img">
-            <img src="assets\img\pic.jpg" alt="marianne">
-          </div>
-          <h1 class="home__title">Marianne Wong</h1>
-          <span class="home__profession">Cyber Security Analyst</span>
-          <div class="home__social">
-            <a href="https://www.linkedin.com/in/mwhm" class="home__social-link" target="_blank"><i class="bx bxl-linkedin"></i></a>
-            <a href="https://www.github.com/honeydonkey" class="home__social-link" target="_blank"><i class="bx bxl-github"></i></a>
-            <a href="mailto:mariannewong23000@gmail.com" class="home__social-link" target="_blank"><i class="bx bx-envelope"></i></a>
-          </div>
-          <a download="" href="assets/Marianne Wong resume.pdf" target="_blank" class="button home__button">Download Resume</a>
-        </div>
-      </div>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Home Section -->
+    <section id="home" class="section">
+      <h1>Welcome to My Cybersecurity Portfolio</h1>
+      <p>Leading the way in securing digital assets</p>
+      <a href="#portfolio" class="btn">View Portfolio</a>
     </section>
-  </main>
 
-  <!-- ABOUT -->
-  <section class="about section" id='about'>
-    <h2 class="section-title">ABOUT ME</h2>
-    <div class="about__container bd-grid">
-      <div class="about__data">
-        <p class="about__description">I'm a cybersecurity analyst looking for opportunity </p>
-        <p class="about__description">love food</p>
-        <p class="about__description">see down for more</p>
-      </div>
-      <div class= "about__information">
-        <h3 class="about__information-title">Information</h3>
-        <div class="about__information-data">
-          <i class="bx bx-globe-alt about__information-icon"></i>
-          <span>Malaysia</span>
-        </div>
-        <div class="about__information-data">
-          <i class="bx bx-envelope about__information-icon"></i>
-          <span>mariannewong23000@gmail.com</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>Detailed background information about the cybersecurity specialist goes here...</p>
+    </section>
 
-  <!-- SKILLS -->
-  <section class="skills section" id="skills">
-    <h2 class="section-title">SKILLS</h2>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <h2>Portfolio</h2>
+      <div class="project">
+        <h3>Project Title</h3>
+        <p>Description of the project...</p>
+      </div>
+      <!-- More projects go here -->
+    </section>
 
-    <div class="skills__container bd-grid">
-      <div class="skills__content">
-        <!-- <h3 class="skills__subtitle">Frontend</h3> -->
-        <div class="skills__section">
-          <div class="skills__body">
-            <div class="skills__data">
-              <i class="skills__icons bx bxl-html5"></i>
-              <span class="skills__name">HTML</span>
-            </div>
-            <div class="skills__data">
-              <i class="skills__icons bx bxl-css3"></i>
-              <span class="skills__name">CSS</span>
-            </div>
-            <div class="skills__data">
-              <i class="skills__icons bx bxl-javascript"></i>
-              <span class="skills__name">JS</span>
-            </div>
-            <div class="skills__data">
-              <i class='skills__icons bx bxl-nodejs'></i>
-              <span class="skills__name">NODEJS/EXPRESSJS</span>
-            </div>   
-            <div class="skills__data">
-              <i class="skills__icons bx bxl-flutter"></i>
-              <span class="skills__name">FLUTTER</span>
-            </div>      
-          </div>
-          <div class="skills__body">                    
-            <div class="skills__data">
-              <i class="skills__icons bx bxl-react"></i>
-              <span class="skills__name">REACT</span>
-            </div>
-            <div class="skills__data">
-              <i class='skills__icons bx bxl-mongodb'></i>
-              <span class="skills__name">MONGODB</span>
-            </div>   
-            <div class="skills__data">
-              <i class="skills__icons bx bxl-bootstrap"></i>
-              <span class="skills__name">BOOTSTRAP</span>
-            </div>
-            <div class="skills__data">
-              <i class="skills__icons iconify" data-icon="vscode-icons:file-type-light-solidity"></i>
-              <span class="skills__name">SOLIDITY</span>
-            </div>
-            <div class="skills__data">
-              <i class="skills__icons iconify" data-icon="cib:ethereum"></i>
-              <span class="skills__name">ETHER.JS</span>
-            </div>
-          </div> 
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <p>Description of services offered...</p>
+    </section>
 
-  <!-- EDUCATION -->
-  <section class="education section" id="education">
-    <h2 class="section-title">EDUCATION</h2>
-    <div class="education__container bd-grid">
-      <div class="education__content">
-        <div>
-          <h3 class="education__year">2012 - 2017</h3>
-          <span class="education__university">Simon Fraser University</span>
-        </div>
-        <div class="education__time">
-          <span class="education__rounder"></span>
-          <span class="education__line"></span>
-        </div>
-        <div>
-          <h3 class="education__race">Bachelor's of Applied Science</h3>
-          <span class="education__specialty">Electronics Engineering</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- PROJECTS -->
-  <section class="works section" id="projects">
-    <h2 class="section-title">PROJECTS</h2>
-    <div class="works__container bd-grid">
-      <div class="works__img">
-        <img src="assets/img/work6.png" alt="">
-        <div class="works__data">
-          <div>
-            <a href="https://leaguechamps.netlify.app/" class="works__link" target="_blank"><i class="bx bx-link-alt"></i></a>
-            <a href="https://github.com/henry-hein/LeagueOfLegends-react" class="works__link" target="_blank"><i class="bx bxl-github"></i></a>
-          </div> 
-          <span class="works__title">League's ChampList</span>
-          <p class="works__description">A League of Legends Champions List web app that talks to API built using<span class="underline"> React</span> and <span class="underline">CSS</span>. This project focuses on working with open source APIs, implementing search & filtering functionality, Carousel Sliders, React routing, creating modular components, as well as designing a beautiful mobile friendly web page.</p>
-        </div>
-      </div>
-      <div class="works__img">
-        <img src="assets/img/work3.png" alt="">
-        <div class="works__data">
-          <div>
-            <a href="https://flutter-custom-paint.netlify.app/" class="works__link" target="_blank"><i class="bx bx-link-alt"></i></a>
-            <a href="https://github.com/henry-deriv/flutter-paint-app" class="works__link" target="_blank"><i class="bx bxl-github"></i></a>
-          </div> 
-          <span class="works__title">Flutter Custom Paint App</span>
-          <p class="works__description">A Flutter Custom Paint App<span class="underline">Flutter</span> and <span class="underline">DART</span>. This app focuses on learning how to use Custom Painter and Gesture Detector Widgets in Flutter Framework</p>
-        </div>
-      </div>
-      <div class="works__img">
-        <img src="assets/img/work1.png" alt="">
-        <div class="works__data">
-          <div>
-            <a href="https://currency-converter-heroku.herokuapp.com/" class="works__link" target="_blank"><i class="bx bx-link-alt"></i></a>
-            <a href="https://github.com/henry-hein/currency-converter-heroku" class="works__link" target="_blank"><i class="bx bxl-github"></i></a>
-          </div>  
-          <span class="works__title">Currency Converter</span>
-          <p class="works__description">A responsive currency converter app that talks to Frankfurter currency API using <span class="underline">React</span>, <span class="underline">HTML</span>, <span class="underline">CSS</span>, and <span class="underline">Bootstrap</span>. This app is deployed on <span class="underline">Heroku</span> and shows exchange rate table and currency conversion according to your choice of base currency.</p>
-        </div>
-      </div>
-      <div class="works__img">
-        <img src="assets/img/work2.png" alt="">
-        <div class="works__data">
-          <div>
-            <a href="https://pacific-beyond-25033.herokuapp.com/" class="works__link" target="_blank"><i class="bx bx-link-alt"></i></a>
-            <a href="https://github.com/henry-hein/movie-finder-react-2" class="works__link" target="_blank"><i class="bx bxl-github"></i></a>
-          </div>
-          <span class="works__title">Movie Finder</span>
-          <p class="works__description">An interactive movie finder app that talks to open source movie database API using <span class="underline">React</span>, <span class="underline">HTML</span>, <span class="underline">CSS</span>, and <span class="underline">Bootstrap</span>. The app returns a list of movies that matches user's search term and has a dedicated single movie page with more info. The app is deployed on <span class="underline">Heroku</span>.</p>
-        </div>
-      </div>
-      <div class="works__img">
-        <img src="assets/img/work5.png" alt="">
-        <div class="works__data">
-          <div>
-            <a href="https://lucid-varahamihira-0a08bd.netlify.app" class="works__link" target="_blank"><i class="bx bx-link-alt"></i></a>
-            <a href="https://github.com/henry-hein/airbnb-newspress" class="works__link" target="_blank"><i class="bx bxl-github"></i></a>
-          </div> 
-          <span class="works__title">Airbnb Clone</span>
-          <p class="works__description">A responsive Airbnb Clone using <span class="underline">HTML</span>, <span class="underline">CSS</span>, and <span class="underline">Bootstrap</span>. A website that works with 4 different devices from a big monitor to a mobile phone.</p>
-        </div>
-      </div>
-      <div class="works__img">
-        <img src="assets/img/work4.png" alt="">
-        <div class="works__data">
-          <div>
-            <a href="https://eloquent-joliot-0aeef4.netlify.app" class="works__link" target="_blank"><i class="bx bx-link-alt"></i></a>
-            <a href="https://github.com/henry-hein/newsweek-clone" class="works__link" target="_blank"><i class="bx bxl-github"></i></a>
-          </div> 
-          <span class="works__title">Newsweek Clone</span>
-          <p class="works__description">A responsive Newsweek Clone using <span class="underline">HTML</span>, <span class="underline">CSS</span>, and <span class="underline">Bootstrap</span>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+      <h2>Blog</h2>
+      <p>Latest articles and blog posts...</p>
+    </section>
 
-  <!-- CONTACT
-  <section class="contact section" id="contact">
-    <h2 class="section-title">Get in Touch!</h2>
-    <div class="contact__container bd-grid">
-      <form action="" id="form" class="contact__form" onsubmit="sendEmail(); reset(); return false">
-        <div class="contact__inputs">
-          <input type="text" placeholder="Name" class="contact__input" id="username" required>
-          <input type="email" placeholder="Email" class="contact__input" id="email" required>
-        </div>
-        <input type="text" placeholder="Subject" id="subject" class="contact__input" required>
-        <textarea name="" id="message" cols="0" rows="10" placeholder="Message" class="contact__input" required></textarea>
-        <input type="submit" value="Send Message" class="button contact__button">
-      </form>
-    </div>
-  </section> -->
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <p>Contact information and form...</p>
+    </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="footer section">
-    <div class="footer__container bd-grid">
-      <h1 class="footer__title">Marianne Wong</h1>
-      <p class="footer__description">This is my personal portfolio website, all my contact info are in here!</p>
-      <div class="footer__social">
-        <a href="https://www.linkedin.com/in/mwhm" class="footer__link" target="_blank"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://www.github.com/honeydonkey" class="footer__link" target="_blank"><i class="bx bxl-github"></i></a>
-        <a href="mailto:mariannewong23000@gmail.com" class="footer__link" target="_blank"><i class="bx bx-envelope"></i></a>
-      </div>
-      <p class="footer__copy">All rights reserved.</p>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Cybersecurity Specialist Portfolio</p>
   </footer>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+  <!-- JavaScript for smooth scrolling -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
-<script type="text/javascript" src="index.js"></script>
 </html>
