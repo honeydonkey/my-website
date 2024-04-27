@@ -73,8 +73,8 @@ export const experiences = [
     company: "Deriv Services Sdn. Bhd.",
     date: "Jan 2024 - present",
     desc: "Conduct social engineering on employees to evaluate employees’ awareness."+ "\n" +
-    "Educate and train employees through phishing campaigns and trainings."+  "\n" +
-    "Read threat intelligence and communicate security requirements to relevant stakeholders."+  "\n" +
+    "Educate and train employees through phishing campaigns and trainings."+ "\n" +
+    "Read threat intelligence and communicate security requirements to relevant stakeholders."+ "\n" +
     "Communicate latest cyber attacks through infographic to company-wide."+ "\n" +
     "In charge of documenting team’s processes and internal team’s website."+ "\n" +
     "Respond to security related inquiries to promote security awareness culture."+ "\n" +
