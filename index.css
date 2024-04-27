@@ -17,12 +17,12 @@
   --first-color-light: #EAE7E6;
   --first-color-lighten: #FFFAFA; */
 
-  --first-color: #1C1C27;
+  --first-color: #222A35;
   --first-color-dark: #854CE6;
   --first-color-darken: #854CE6;
-  --text-color: #F2F3F4;
-  --first-color-light: #F2F3F4;
-  --first-color-lighten: #F2F3F4;
+  --text-color: #C8CFD8;
+  --first-color-light: #F2F5F7;
+  --first-color-lighten: #626970;
 
   --body-font: 'Poppins', sans-serif;
   --h1-font-size: 1.5rem;
