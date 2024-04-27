@@ -72,16 +72,16 @@ export const experiences = [
     role: " Junior Security Analyst",
     company: "Deriv Services Sdn. Bhd.",
     date: "Jan 2024 - present",
-    desc: "Conduct social engineering on employees to evaluate employees’ awareness."+
-    "Educate and train employees through phishing campaigns and trainings."+
-    "Read threat intelligence and communicate security requirements to relevant stakeholders."+
-    "Communicate latest cyber attacks through infographic to company-wide."+
-    "In charge of documenting team’s processes and internal team’s website."+
-    "Respond to security related inquiries to promote security awareness culture."+
-    "Collaborate with SOC team to investigate security alerts from CrowdStrike, Trellix, and reported phishing emails."+
-    "Review and update Information Security Policies for audit."+
-    "Work with Talent Development team to plan and create mandatory security trainings for new and existing employees."+
-    "Conducted quarterly network penetration testing using Nmap.",
+    desc: "Conduct social engineering on employees to evaluate employees’ awareness."+ "\n" +
+    "Educate and train employees through phishing campaigns and trainings."+  "\n" +
+    "Read threat intelligence and communicate security requirements to relevant stakeholders."+  "\n" +
+    "Communicate latest cyber attacks through infographic to company-wide."+ "\n" +
+    "In charge of documenting team’s processes and internal team’s website."+ "\n" +
+    "Respond to security related inquiries to promote security awareness culture."+ "\n" +
+    "Collaborate with SOC team to investigate security alerts from CrowdStrike, Trellix, and reported phishing emails."+ "\n" +
+    "Review and update Information Security Policies for audit."+ "\n" +
+    "Work with Talent Development team to plan and create mandatory security trainings for new and existing employees."+ "\n" +
+    "Conducted quarterly network penetration testing using Nmap.", "\n" +
     skills: [
       "Javascript",
       "Python",
@@ -92,7 +92,6 @@ export const experiences = [
       "JavaScript",
       "TypeScript",
     ],
-    doc: "https://sbsmindscript.com/",
   },
   {
     id: 0,
@@ -110,7 +109,6 @@ export const experiences = [
       "CSS",
       "JavaScript",
     ],
-    doc: "https://firebasestorage.googleapis.com/v0/b/buckoid-917cf.appspot.com/o/Screenshot%20from%202023-05-28%2023-20-46.png?alt=media&token=5570f995-e8f4-4f12-bb2f-73bcf4b20730",
   },
   {
     id: 1,
