@@ -72,7 +72,7 @@ export const experiences = [
     role: " Junior Security Analyst",
     company: "Deriv Services Sdn. Bhd.",
     date: "Jan 2024 - present",
-    desc: ["- Conduct social engineering on employees to evaluate employees’ awareness.",
+    desc: ["Conduct social engineering on employees to evaluate employees’ awareness.",
     "\nEducate and train employees through phishing campaigns and trainings.",
     "\nRead threat intelligence and communicate security requirements to relevant stakeholders",
     "\nCommunicate latest cyber attacks through infographic to company-wide.",
