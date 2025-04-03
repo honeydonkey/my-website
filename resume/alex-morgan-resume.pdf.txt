@@ -1,0 +1,16 @@
+This is a placeholder for the actual PDF resume file.
+
+In a real implementation, this would be replaced with an actual PDF resume file named "alex-morgan-resume.pdf".
+
+The resume would typically include:
+- Contact information
+- Professional summary
+- Work experience
+- Education
+- Certifications (CISSP, CEH, CompTIA Security+)
+- Technical skills
+- Projects
+- References
+
+Note: Since we can't create an actual PDF file in this environment, this text file serves as a placeholder. 
+In a real implementation, you would need to replace this with a properly formatted PDF resume.
