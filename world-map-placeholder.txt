@@ -1,4 +1,0 @@
-This is a placeholder for a world map image.
-In a real implementation, this would be replaced with an actual image file (e.g., PNG, SVG, or JPG) 
-that contains a stylized world map for the threat map visualization in the security dashboard section.
-The map would serve as a background for displaying global cybersecurity threat points.
