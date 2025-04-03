@@ -1,0 +1,572 @@
+/**
+ * Layout CSS for Cybersecurity Portfolio
+ * Contains container, grid, and section styles
+ */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+.container-narrow {
+  max-width: 900px;
+}
+
+/* Grid System */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding: 0 1rem;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  padding: 0 1rem;
+}
+
+.col-1 {
+  flex: 0 0 auto;
+  width: 8.333333%;
+  padding: 0 1rem;
+}
+
+.col-2 {
+  flex: 0 0 auto;
+  width: 16.666667%;
+  padding: 0 1rem;
+}
+
+.col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+  padding: 0 1rem;
+}
+
+.col-4 {
+  flex: 0 0 auto;
+  width: 33.333333%;
+  padding: 0 1rem;
+}
+
+.col-5 {
+  flex: 0 0 auto;
+  width: 41.666667%;
+  padding: 0 1rem;
+}
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+  padding: 0 1rem;
+}
+
+.col-7 {
+  flex: 0 0 auto;
+  width: 58.333333%;
+  padding: 0 1rem;
+}
+
+.col-8 {
+  flex: 0 0 auto;
+  width: 66.666667%;
+  padding: 0 1rem;
+}
+
+.col-9 {
+  flex: 0 0 auto;
+  width: 75%;
+  padding: 0 1rem;
+}
+
+.col-10 {
+  flex: 0 0 auto;
+  width: 83.333333%;
+  padding: 0 1rem;
+}
+
+.col-11 {
+  flex: 0 0 auto;
+  width: 91.666667%;
+  padding: 0 1rem;
+}
+
+.col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Responsive Grid */
+@media (min-width: 576px) {
+  .col-sm {
+    flex: 1 0 0%;
+  }
+  .col-sm-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .col-sm-1 {
+    flex: 0 0 auto;
+    width: 8.333333%;
+  }
+  .col-sm-2 {
+    flex: 0 0 auto;
+    width: 16.666667%;
+  }
+  .col-sm-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .col-sm-4 {
+    flex: 0 0 auto;
+    width: 33.333333%;
+  }
+  .col-sm-5 {
+    flex: 0 0 auto;
+    width: 41.666667%;
+  }
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .col-sm-7 {
+    flex: 0 0 auto;
+    width: 58.333333%;
+  }
+  .col-sm-8 {
+    flex: 0 0 auto;
+    width: 66.666667%;
+  }
+  .col-sm-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .col-sm-10 {
+    flex: 0 0 auto;
+    width: 83.333333%;
+  }
+  .col-sm-11 {
+    flex: 0 0 auto;
+    width: 91.666667%;
+  }
+  .col-sm-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md {
+    flex: 1 0 0%;
+  }
+  .col-md-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .col-md-1 {
+    flex: 0 0 auto;
+    width: 8.333333%;
+  }
+  .col-md-2 {
+    flex: 0 0 auto;
+    width: 16.666667%;
+  }
+  .col-md-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 33.333333%;
+  }
+  .col-md-5 {
+    flex: 0 0 auto;
+    width: 41.666667%;
+  }
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .col-md-7 {
+    flex: 0 0 auto;
+    width: 58.333333%;
+  }
+  .col-md-8 {
+    flex: 0 0 auto;
+    width: 66.666667%;
+  }
+  .col-md-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .col-md-10 {
+    flex: 0 0 auto;
+    width: 83.333333%;
+  }
+  .col-md-11 {
+    flex: 0 0 auto;
+    width: 91.666667%;
+  }
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg {
+    flex: 1 0 0%;
+  }
+  .col-lg-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .col-lg-1 {
+    flex: 0 0 auto;
+    width: 8.333333%;
+  }
+  .col-lg-2 {
+    flex: 0 0 auto;
+    width: 16.666667%;
+  }
+  .col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.333333%;
+  }
+  .col-lg-5 {
+    flex: 0 0 auto;
+    width: 41.666667%;
+  }
+  .col-lg-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .col-lg-7 {
+    flex: 0 0 auto;
+    width: 58.333333%;
+  }
+  .col-lg-8 {
+    flex: 0 0 auto;
+    width: 66.666667%;
+  }
+  .col-lg-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .col-lg-10 {
+    flex: 0 0 auto;
+    width: 83.333333%;
+  }
+  .col-lg-11 {
+    flex: 0 0 auto;
+    width: 91.666667%;
+  }
+  .col-lg-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-xl {
+    flex: 1 0 0%;
+  }
+  .col-xl-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .col-xl-1 {
+    flex: 0 0 auto;
+    width: 8.333333%;
+  }
+  .col-xl-2 {
+    flex: 0 0 auto;
+    width: 16.666667%;
+  }
+  .col-xl-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .col-xl-4 {
+    flex: 0 0 auto;
+    width: 33.333333%;
+  }
+  .col-xl-5 {
+    flex: 0 0 auto;
+    width: 41.666667%;
+  }
+  .col-xl-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .col-xl-7 {
+    flex: 0 0 auto;
+    width: 58.333333%;
+  }
+  .col-xl-8 {
+    flex: 0 0 auto;
+    width: 66.666667%;
+  }
+  .col-xl-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .col-xl-10 {
+    flex: 0 0 auto;
+    width: 83.333333%;
+  }
+  .col-xl-11 {
+    flex: 0 0 auto;
+    width: 91.666667%;
+  }
+  .col-xl-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+/* Section Styles */
+.section {
+  position: relative;
+}
+
+.section-padding {
+  padding: var(--spacing-3xl) 0;
+}
+
+.section-padding-sm {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-padding-lg {
+  padding: var(--spacing-3xl) 0;
+}
+
+.section-header {
+  margin-bottom: var(--spacing-2xl);
+  position: relative;
+}
+
+.section-title {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: var(--border-radius-sm);
+}
+
+.section-title.text-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-subtitle {
+  color: var(--color-gray);
+  font-size: var(--font-size-lg);
+  max-width: 700px;
+}
+
+.section-subtitle.text-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-dark {
+  background-color: var(--color-dark);
+}
+
+.section-darker {
+  background-color: var(--color-darker);
+}
+
+.section-gradient {
+  background: linear-gradient(135deg, var(--color-darker) 0%, var(--color-dark) 100%);
+}
+
+.section-border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-border-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Cybersecurity-themed Section Styles */
+.section-cyber {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-cyber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle, rgba(255, 105, 180, 0.1) 1px, transparent 1px) 0 0 / 20px 20px,
+    radial-gradient(circle, rgba(138, 43, 226, 0.05) 1px, transparent 1px) 10px 10px / 20px 20px;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.section-cyber-grid {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-cyber-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(255, 105, 180, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 43, 226, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: -1;
+}
+
+.section-cyber-glow {
+  position: relative;
+}
+
+.section-cyber-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.2) 0%, rgba(255, 105, 180, 0) 70%);
+  z-index: -1;
+}
+
+/* Dividers */
+.divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: var(--spacing-2xl) 0;
+}
+
+.divider-sm {
+  margin: var(--spacing-md) 0;
+}
+
+.divider-lg {
+  margin: var(--spacing-3xl) 0;
+}
+
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--color-primary) 20%, 
+    var(--color-primary) 80%, 
+    transparent 100%);
+}
+
+/* Cybersecurity-themed Dividers */
+.divider-cyber {
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 5px,
+    var(--color-primary) 5px,
+    var(--color-primary) 10px
+  );
+}
+
+.divider-cyber-dots {
+  height: 6px;
+  background: radial-gradient(
+    circle at 3px,
+    var(--color-primary) 1px,
+    transparent 2px
+  );
+  background-size: 10px 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .section-padding {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .section-padding-lg {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .section-padding-lg {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .section-header {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .section-subtitle {
+    font-size: var(--font-size-md);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .row {
+    margin: 0 -0.5rem;
+  }
+  
+  [class*="col-"] {
+    padding: 0 0.5rem;
+  }
+}
