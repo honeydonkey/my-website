@@ -1,3 +1,0 @@
-This is a placeholder for a binary pattern background image.
-In a real implementation, this would be replaced with an actual image file (e.g., PNG, SVG, or JPG) 
-that contains a pattern of binary code (0s and 1s) to create a cybersecurity-themed background.
