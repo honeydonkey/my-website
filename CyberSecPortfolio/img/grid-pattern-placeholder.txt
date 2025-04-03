@@ -1,3 +1,0 @@
-This is a placeholder for a grid pattern background image.
-In a real implementation, this would be replaced with an actual image file (e.g., PNG, SVG, or JPG) 
-that contains a digital grid or network pattern to create a cybersecurity-themed background for the hero section.
