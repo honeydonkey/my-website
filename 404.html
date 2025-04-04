@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Marianne Wong</title>
+  <meta name="description" content="Page not found - Marianne Wong's Cybersecurity Portfolio">
+  
+  <!-- Favicon - Using Font Awesome icon as fallback -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>" type="image/svg+xml">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    .error-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .error-code {
+      font-size: 8rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      font-family: var(--font-code);
+      position: relative;
+    }
+    
+    .error-code::after {
+      content: "404";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: var(--color-secondary);
+      opacity: 0.3;
+      transform: translate(5px, 5px);
+      z-index: -1;
+    }
+    
+    .error-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .error-message {
+      font-size: 1.1rem;
+      color: var(--color-gray);
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    
+    .error-cta {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .binary-bg {
+      opacity: 0.05;
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-spinner"></div>
+      <div class="preloader-text">INITIALIZING ...</div>
+      <div class="preloader-progress">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Background Elements -->
+  <div class="binary-bg"></div>
+  <div class="grid-bg"></div>
+  
+  <!-- Error Container -->
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-message">
+      The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Please check the URL or return to the homepage.
+    </p>
+    <div class="error-cta">
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-home"></i> Back to Home
+      </a>
+    </div>
+  </div>
+  
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
