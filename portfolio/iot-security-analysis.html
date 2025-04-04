@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT Device Security Analysis | Marianne Wong</title>
+  <meta name="description" content="Case study of identifying vulnerabilities in connected devices for a smart home manufacturer by Marianne Wong, Cybersecurity Analyst.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>" type="image/svg+xml">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
+  
+  <!-- Portfolio Case Study CSS -->
+  <style>
+    .case-study-header {
+      background: linear-gradient(rgba(20, 10, 30, 0.8), rgba(20, 10, 30, 0.9)), url('../img/portfolio/iot-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 150px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .case-study-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../img/binary-pattern-placeholder.txt');
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .case-study-title {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .case-study-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .case-study-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .case-study-meta-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .case-study-meta-icon {
+      margin-right: 0.5rem;
+      color: var(--color-primary);
+    }
+    
+    .case-study-content {
+      padding: 5rem 0;
+    }
+    
+    .case-study-section {
+      margin-bottom: 4rem;
+    }
+    
+    .case-study-section-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-primary);
+      position: relative;
+      padding-left: 1rem;
+    }
+    
+    .case-study-section-title::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+    
+    .case-study-image {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin: 2rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .case-study-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .case-study-quote {
+      background: rgba(138, 43, 226, 0.1);
+      border-left: 4px solid var(--color-primary);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      font-style: italic;
+    }
+    
+    .case-study-quote-author {
+      margin-top: 1rem;
+      font-weight: 700;
+      font-style: normal;
+    }
+    
+    .case-study-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .case-study-stat {
+      background: rgba(20, 10, 30, 0.5);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .case-study-stat:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .case-study-stat-value {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+    }
+    
+    .case-study-stat-label {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+    
+    .case-study-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .case-study-skill {
+      background: rgba(138, 43, 226, 0.2);
+      color: var(--color-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-family: var(--font-code);
+    }
+    
+    .case-study-cta {
+      background: linear-gradient(rgba(20, 10, 30, 0.9), rgba(20, 10, 30, 0.8)), url('../img/binary-pattern-placeholder.txt');
+      background-size: cover;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    
+    .case-study-cta-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .case-study-cta-text {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.8;
+    }
+    
+    .case-study-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .case-study-nav-item {
+      display: flex;
+      align-items: center;
+      color: var(--color-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .case-study-nav-item:hover {
+      color: var(--color-primary);
+    }
+    
+    .case-study-nav-icon {
+      font-size: 1.5rem;
+    }
+    
+    .case-study-nav-prev .case-study-nav-icon {
+      margin-right: 1rem;
+    }
+    
+    .case-study-nav-next .case-study-nav-icon {
+      margin-left: 1rem;
+    }
+    
+    .case-study-nav-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .case-study-nav-label {
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+    
+    .case-study-nav-title {
+      font-weight: 700;
+    }
+    
+    .vulnerability-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+    }
+    
+    .vulnerability-table th,
+    .vulnerability-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .vulnerability-table th {
+      background: rgba(138, 43, 226, 0.2);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+    
+    .vulnerability-table tr:hover {
+      background: rgba(138, 43, 226, 0.05);
+    }
+    
+    .severity-critical {
+      color: #ff4d4d;
+      font-weight: 700;
+    }
+    
+    .severity-high {
+      color: #ff9933;
+      font-weight: 700;
+    }
+    
+    .severity-medium {
+      color: #ffcc00;
+      font-weight: 700;
+    }
+    
+    .severity-low {
+      color: #66cc66;
+      font-weight: 700;
+    }
+    
+    .device-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .device-item {
+      background: rgba(20, 10, 30, 0.5);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .device-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .device-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+    }
+    
+    .device-name {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .device-description {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+    
+    .device-vulnerabilities {
+      display: inline-block;
+      background: rgba(138, 43, 226, 0.2);
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    
+    .code-snippet {
+      background: rgba(20, 10, 30, 0.5);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      font-family: var(--font-code);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      position: relative;
+    }
+    
+    .code-snippet::before {
+      content: attr(data-language);
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: rgba(138, 43, 226, 0.5);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      border-radius: 0 var(--border-radius) 0 var(--border-radius);
+    }
+    
+    .code-snippet .comment {
+      color: #6c757d;
+    }
+    
+    .code-snippet .string {
+      color: #28a745;
+    }
+    
+    .code-snippet .keyword {
+      color: #007bff;
+    }
+    
+    .code-snippet .function {
+      color: #fd7e14;
+    }
+    
+    .code-snippet .highlight {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    
+    .methodology-steps {
+      counter-reset: methodology-counter;
+      margin: 2rem 0;
+    }
+    
+    .methodology-step {
+      position: relative;
+      padding-left: 3rem;
+      margin-bottom: 2rem;
+    }
+    
+    .methodology-step:last-child {
+      margin-bottom: 0;
+    }
+    
+    .methodology-step::before {
+      counter-increment: methodology-counter;
+      content: counter(methodology-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2rem;
+      height: 2rem;
+      background: var(--color-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    
+    .methodology-step-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .methodology-step-description {
+      opacity: 0.8;
+    }
+    
+    @media (max-width: 768px) {
+      .case-study-title {
+        font-size: 2.5rem;
+      }
+      
+      .case-study-meta {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .case-study-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .device-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .vulnerability-table {
+        font-size: 0.8rem;
+      }
+      
+      .vulnerability-table th,
+      .vulnerability-table td {
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="binary-bg"></div>
+  <div class="grid-bg"></div>
+  
+  <!-- Header -->
+  <header class="header scrolled">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <span class="logo-text glitch" data-text="MW_SECURITY">Marianne_Wong</span>
+        </a>
+        
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="../index.html#home" class="nav-link">Home</a></li>
+            <li><a href="../index.html#about" class="nav-link">About</a></li>
+            <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+            <li><a href="../index.html#services" class="nav-link">Services</a></li>
+            <li><a href="../index.html#portfolio" class="nav-link active">Portfolio</a></li>
+            <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Case Study Header -->
+  <section class="case-study-header">
+    <div class="container">
+      <h1 class="case-study-title">IoT Device Security Analysis</h1>
+      <p class="case-study-subtitle">Identifying vulnerabilities in connected devices for a smart home manufacturer</p>
+      
+      <div class="case-study-meta">
+        <div class="case-study-meta-item">
+          <span class="case-study-meta-icon"><i class="fas fa-calendar-alt"></i></span>
+          <span>Completed: August 2023</span>
+        </div>
+        
+        <div class="case-study-meta-item">
+          <span class="case-study-meta-icon"><i class="fas fa-building"></i></span>
+          <span>Client: SmartLiving Technologies (Confidential)</span>
+        </div>
+        
+        <div class="case-study-meta-item">
+          <span class="case-study-meta-icon"><i class="fas fa-tag"></i></span>
+          <span>Category: Vulnerability Assessment</span>
+        </div>
+        
+        <div class="case-study-meta-item">
+          <span class="case-study-meta-icon"><i class="fas fa-clock"></i></span>
+          <span>Duration: 6 weeks</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Case Study Content -->
+  <section class="case-study-content">
+    <div class="container">
+      <!-- Overview Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Project Overview</h2>
+        <p>
+          A leading smart home device manufacturer engaged me to conduct a comprehensive security assessment of their new product line before market launch. The assessment focused on identifying security vulnerabilities in their connected devices, cloud infrastructure, and mobile applications that could potentially compromise user privacy, safety, or the integrity of the smart home ecosystem.
+        </p>
+        <p>
+          The project involved analyzing five distinct IoT devices that formed part of an integrated smart home system, including security cameras, smart locks, environmental sensors, lighting controls, and a central hub that coordinated device communication.
+        </p>
+        
+        <div class="case-study-stats">
+          <div class="case-study-stat">
+            <div class="case-study-stat-value">5</div>
+            <div class="case-study-stat-label">IoT Devices Assessed</div>
+          </div>
+          
+          <div class="case-study-stat">
+            <div class="case-study-stat-value">23</div>
+            <div class="case-study-stat-label">Vulnerabilities Identified</div>
+          </div>
+          
+          <div class="case-study-stat">
+            <div class="case-study-stat-value">3</div>
+            <div class="case-study-stat-label">Critical Security Flaws</div>
+          </div>
+          
+          <div class="case-study-stat">
+            <div class="case-study-stat-value">100%</div>
+            <div class="case-study-stat-label">Issues Remediated</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Devices Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Devices Under Assessment</h2>
+        <p>
+          The security assessment covered the following smart home devices, each with unique security considerations:
+        </p>
+        
+        <div class="device-grid">
+          <div class="device-item">
+            <div class="device-icon">
+              <i class="fas fa-video"></i>
+            </div>
+            <h3 class="device-name">SecureView Pro</h3>
+            <p class="device-description">
+              Indoor/outdoor security camera with motion detection, two-way audio, and night vision capabilities.
+            </p>
+            <div class="device-vulnerabilities">7 Vulnerabilities</div>
+          </div>
+          
+          <div class="device-item">
+            <div class="device-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3 class="device-name">SmartLock 2.0</h3>
+            <p class="device-description">
+              Keyless entry smart lock with fingerprint recognition, PIN code, and remote access functionality.
+            </p>
+            <div class="device-vulnerabilities">5 Vulnerabilities</div>
+          </div>
+          
+          <div class="device-item">
+            <div class="device-icon">
+              <i class="fas fa-thermometer-half"></i>
+            </div>
+            <h3 class="device-name">EnviroSense</h3>
+            <p class="device-description">
+              Environmental monitoring system tracking temperature, humidity, air quality, and smoke detection.
+            </p>
+            <div class="device-vulnerabilities">3 Vulnerabilities</div>
+          </div>
+          
+          <div class="device-item">
+            <div class="device-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="device-name">LightControl Hub</h3>
+            <p class="device-description">
+              Smart lighting system with scheduling, remote control, and scene customization features.
+            </p>
+            <div class="device-vulnerabilities">4 Vulnerabilities</div>
+          </div>
+          
+          <div class="device-item">
+            <div class="device-icon">
+              <i class="fas fa-broadcast-tower"></i>
+            </div>
+            <h3 class="device-name">HomeHub Central</h3>
+            <p class="device-description">
+              Central control unit that coordinates communication between all smart home devices.
+            </p>
+            <div class="device-vulnerabilities">4 Vulnerabilities</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Challenges Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Challenges</h2>
+        <p>
+          The security assessment presented several significant challenges:
+        </p>
+        <ul>
+          <li><strong>Diverse Technology Stack:</strong> The devices utilized various communication protocols (Zigbee, Z-Wave, Wi-Fi, Bluetooth LE) and hardware platforms, requiring a broad range of technical expertise.</li>
+          <li><strong>Complex Ecosystem:</strong> The interconnected nature of the devices created a large attack surface spanning hardware, firmware, mobile applications, cloud services, and network communications.</li>
+          <li><strong>Pre-Production Timeline:</strong> The assessment needed to be completed within a tight timeframe to meet the product launch schedule without compromising thoroughness.</li>
+          <li><strong>Privacy Considerations:</strong> The devices collected sensitive user data, including video footage and location information, requiring careful evaluation of privacy controls.</li>
+          <li><strong>Regulatory Compliance:</strong> The assessment needed to consider compliance with various IoT security standards and regulations across different markets.</li>
+        </ul>
+        
+        <div class="case-study-quote">
+          "Our product line represents a significant investment in the smart home market, and we needed to ensure that security was built into every aspect of our ecosystem. The complexity of our integrated system required a thorough assessment by someone who understood both the technical and user experience implications of security controls."
+          <div class="case-study-quote-author">— Chief Product Officer</div>
+        </div>
+      </div>
+      
+      <!-- Methodology Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Assessment Methodology</h2>
+        <p>
+          I implemented a comprehensive, multi-layered approach to assess the security of the IoT ecosystem:
+        </p>
+        
+        <div class="methodology-steps">
+          <div class="methodology-step">
+            <h3 class="methodology-step-title">Hardware Security Analysis</h3>
+            <p class="methodology-step-description">
+              Conducted physical device examination to identify hardware-based vulnerabilities, including debug ports, unsecured interfaces, and component analysis. Used non-destructive techniques to evaluate physical security controls and identify potential attack vectors.
+            </p>
+          </div>
+          
+          <div class="methodology-step">
+            <h3 class="methodology-step-title">Firmware Analysis</h3>
+            <p class="methodology-step-description">
+              Extracted and analyzed device firmware to identify security issues such as hardcoded credentials, encryption weaknesses, and vulnerable third-party components. Used static and dynamic analysis techniques to evaluate firmware security controls.
+            </p>
+          </div>
+          
+          <div class="methodology-step">
+            <h3 class="methodology-step-title">Communication Protocol Assessment</h3>
+            <p class="methodology-step-description">
+              Analyzed device communications across various protocols (Wi-Fi, Bluetooth LE, Zigbee, Z-Wave) to identify encryption weaknesses, authentication issues, and protocol-specific vulnerabilities. Used protocol analyzers and custom tools to intercept and evaluate communications.
+            </p>
+          </div>
+          
+          <div class="methodology-step">
+            <h3 class="methodology-step-title">Mobile Application Security Testing</h3>
+            <p class="methodology-step-description">
+              Conducted comprehensive security testing of the companion mobile applications (iOS and Android) to identify issues such as insecure data storage, weak authentication, and API vulnerabilities. Used both static and dynamic analysis techniques.
+            </p>
+          </div>
+          
+          <div class="methodology-step">
+            <h3 class="methodology-step-title">Cloud Infrastructure Assessment</h3>
+            <p class="methodology-step-description">
+              Evaluated the security of the cloud backend services supporting the IoT ecosystem, including API security, authentication mechanisms, and data protection controls. Assessed the implementation of security best practices in the cloud environment.
+            </p>
+          </div>
+          
+          <div class="methodology-step">
+            <h3 class="methodology-step-title">Privacy Control Evaluation</h3>
+            <p class="methodology-step-description">
+              Assessed the implementation of privacy controls across the ecosystem, including data collection practices, user consent mechanisms, and compliance with relevant privacy regulations. Evaluated the effectiveness of data minimization and protection measures.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Findings Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Key Findings</h2>
+        <p>
+          The security assessment identified 23 vulnerabilities across the IoT ecosystem, categorized by severity:
+        </p>
+        
+        <table class="vulnerability-table">
+          <thead>
+            <tr>
+              <th>Device/Component</th>
+              <th>Vulnerability</th>
+              <th>Severity</th>
+              <th>Potential Impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SecureView Pro</td>
+              <td>Hardcoded administrative credentials in firmware</td>
+              <td><span class="severity-critical">Critical</span></td>
+              <td>Unauthorized remote access to camera feeds</td>
+            </tr>
+            <tr>
+              <td>SmartLock 2.0</td>
+              <td>Insufficient entropy in Bluetooth LE pairing process</td>
+              <td><span class="severity-critical">Critical</span></td>
+              <td>Potential for pairing interception and unauthorized lock control</td>
+            </tr>
+            <tr>
+              <td>HomeHub Central</td>
+              <td>Unencrypted local storage of device credentials</td>
+              <td><span class="severity-critical">Critical</span></td>
+              <td>Compromise of all connected devices if hub is physically accessed</td>
+            </tr>
+            <tr>
+              <td>Mobile Application</td>
+              <td>Insecure implementation of OAuth 2.0 authentication flow</td>
+              <td><span class="severity-high">High</span></td>
+              <td>Account takeover through token interception</td>
+            </tr>
+            <tr>
+              <td>Cloud API</td>
+              <td>Lack of rate limiting on authentication endpoints</td>
+              <td><span class="severity-high">High</span></td>
+              <td>Brute force attacks against user accounts</td>
+            </tr>
+            <tr>
+              <td>EnviroSense</td>
+              <td>Unvalidated firmware update process</td>
+              <td><span class="severity-high">High</span></td>
+              <td>Potential for malicious firmware installation</td>
+            </tr>
+            <tr>
+              <td>LightControl Hub</td>
+              <td>Insufficient input validation in control commands</td>
+              <td><span class="severity-medium">Medium</span></td>
+              <td>Potential for command injection attacks</td>
+            </tr>
+            <tr>
+              <td>All Devices</td>
+              <td>Lack of secure boot implementation</td>
+              <td><span class="severity-medium">Medium</span></td>
+              <td>Potential for boot-time attacks and persistent malware</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <p>
+          One of the most significant findings was a critical vulnerability in the SecureView Pro camera that could allow an attacker to gain unauthorized access to live video feeds:
+        </p>
+        
+        <div class="code-snippet" data-language="Firmware Analysis">
+          <span class="comment">// Extracted from SecureView Pro firmware (version 1.2.3)</span><br>
+          <span class="keyword">function</span> <span class="function">authenticateAdminUser</span>(username, password) {<br>
+          &nbsp;&nbsp;<span class="comment">// Hardcoded backdoor credentials</span><br>
+          &nbsp;&nbsp;<span class="keyword">if</span> (username === <span class="string">"admin_sv"</span> && password === <span class="string highlight">"SV_M@st3r2023"</span>) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">true</span>;<br>
+          &nbsp;&nbsp;}<br>
+          &nbsp;&nbsp;<br>
+          &nbsp;&nbsp;<span class="comment">// Normal authentication flow</span><br>
+          &nbsp;&nbsp;<span class="keyword">return</span> checkCredentialsAgainstDatabase(username, password);<br>
+          }
+        </div>
+        
+        <p>
+          Another critical issue was identified in the SmartLock 2.0's Bluetooth LE implementation, which used insufficient entropy during the pairing process, making it vulnerable to MITM attacks:
+        </p>
+        
+        <div class="code-snippet" data-language="Bluetooth LE Analysis">
+          <span class="comment"># Captured pairing sequence analysis</span><br>
+          <span class="comment"># Temporary key generation using static values</span><br>
+          <br>
+          Device: Advertising with static MAC: 11:22:33:44:55:66<br>
+          <span class="highlight">Pairing Request: IO Capability = NoInputNoOutput, OOB = 0, MITM = 0</span><br>
+          Pairing Response: IO Capability = NoInputNoOutput, OOB = 0, MITM = 0<br>
+          <span class="highlight">TK Value: 0x00000000 (Default/Static)</span><br>
+          Rand Value: 0x12345678ABCDEF01<br>
+          Confirm Value: 0xA1B2C3D4E5F60718<br>
+          <br>
+          <span class="comment"># Vulnerability: Predictable TK allows MITM attack during pairing</span>
+        </div>
+        
+        <p>
+          The HomeHub Central device stored device credentials in an unencrypted SQLite database, making it possible for an attacker with physical access to extract credentials for all connected devices:
+        </p>
+        
+        <div class="code-snippet" data-language="Database Analysis">
+          <span class="comment">-- Extracted from HomeHub Central local database</span><br>
+          <span class="comment">-- File: /data/local/hub_data.db</span><br>
+          <br>
+          <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> device_credentials;<br>
+          <br>
+          <span class="comment">/* Results */</span><br>
+          device_id | device_name | username | <span class="highlight">password</span> | token<br>
+          ----------|-------------|----------|----------|--------<br>
+          SV001     | Front Door Camera | admin | <span class="highlight">Camera@123</span> | eyJhbGc...<br>
+          SL002     | Main Door Lock | admin | <span class="highlight">Lock@2023</span> | eyJhbGc...<br>
+          ES003     | Living Room Sensor | admin | <span class="highlight">Sensor#456</span> | eyJhbGc...<br>
+          LC004     | Kitchen Lights | admin | <span class="highlight">Light$789</span> | eyJhbGc...<br>
+        </div>
+      </div>
+      
+      <!-- Solutions Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Remediation Recommendations</h2>
+        <p>
+          Based on the findings, I developed a comprehensive set of remediation recommendations for each identified vulnerability. The recommendations were prioritized based on severity and potential impact:
+        </p>
+        
+        <ol>
+          <li>
+            <strong>Critical Vulnerabilities:</strong>
+            <ul>
+              <li>Remove hardcoded credentials from the SecureView Pro firmware and implement a secure credential management system.</li>
+              <li>Redesign the SmartLock 2.0 Bluetooth LE pairing process to use a secure pairing method with proper entropy and MITM protection.</li>
+              <li>Implement encrypted storage for all credentials in the HomeHub Central using industry-standard encryption algorithms.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>High Severity Vulnerabilities:</strong>
+            <ul>
+              <li>Redesign the OAuth 2.0 implementation in the mobile application to follow security best practices and prevent token interception.</li>
+              <li>Implement rate limiting and account lockout mechanisms on all authentication endpoints to prevent brute force attacks.</li>
+              <li>Implement cryptographic signature verification for all firmware updates to prevent unauthorized modifications.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Medium and Low Severity Vulnerabilities:</strong>
+            <ul>
+              <li>Implement proper input validation and sanitization for all user inputs and control commands.</li>
+              <li>Develop and implement a secure boot process for all devices to ensure firmware integrity.</li>
+              <li>Enhance logging and monitoring capabilities to detect potential security incidents.</li>
+              <li>Implement secure default configurations for all devices to minimize the attack surface.</li>
+            </ul>
+          </li>
+        </ol>
+        
+        <p>
+          For each recommendation, I provided detailed technical guidance on implementation approaches, including code examples, configuration changes, and architectural modifications where appropriate.
+        </p>
+        
+        <div class="case-study-quote">
+          "The detailed remediation recommendations were invaluable. Rather than just pointing out problems, Marianne provided clear, actionable solutions that our development team could implement directly. The prioritization of issues helped us focus our resources on the most critical vulnerabilities first."
+          <div class="case-study-quote-author">— VP of Engineering</div>
+        </div>
+      </div>
+      
+      <!-- Implementation Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Implementation & Results</h2>
+        <p>
+          Following the assessment, I worked closely with the client's development team to implement the recommended security improvements:
+        </p>
+        
+        <div class="case-study-stats">
+          <div class="case-study-stat">
+            <div class="case-study-stat-value">100%</div>
+            <div class="case-study-stat-label">Critical Issues Resolved</div>
+          </div>
+          
+          <div class="case-study-stat">
+            <div class="case-study-stat-value">92%</div>
+            <div class="case-study-stat-label">High Severity Issues Resolved</div>
+          </div>
+          
+          <div class="case-study-stat">
+            <div class="case-study-stat-value">85%</div>
+            <div class="case-study-stat-label">Medium Issues Resolved</div>
+          </div>
+          
+          <div class="case-study-stat">
+            <div class="case-study-stat-value">0</div>
+            <div class="case-study-stat-label">Security Incidents Post-Launch</div>
+          </div>
+        </div>
+        
+        <p>
+          Key implementation highlights included:
+        </p>
+        
+        <ul>
+          <li><strong>Secure Firmware Development:</strong> Implemented a secure development lifecycle for firmware, including code reviews, static analysis, and vulnerability scanning.</li>
+          <li><strong>Enhanced Authentication:</strong> Redesigned authentication mechanisms across all devices and interfaces to use industry best practices.</li>
+          <li><strong>Encrypted Communications:</strong> Implemented end-to-end encryption for all device communications using TLS 1.3 and strong cipher suites.</li>
+          <li><strong>Secure Storage:</strong> Implemented encrypted storage for all sensitive data using AES-256 encryption.</li>
+          <li><strong>Secure Boot:</strong> Developed and implemented a secure boot process for all devices to ensure firmware integrity.</li>
+          <li><strong>Privacy Controls:</strong> Enhanced privacy controls to give users granular control over data collection and sharing.</li>
+        </ul>
+        
+        <p>
+          The implementation of these security improvements resulted in a significantly more secure IoT ecosystem that successfully passed subsequent security audits and met regulatory requirements for IoT device security.
+        </p>
+      </div>
+      
+      <!-- Long-term Impact Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Long-term Impact</h2>
+        <p>
+          The security assessment and subsequent improvements had several significant long-term impacts for the client:
+        </p>
+        
+        <ul>
+          <li><strong>Successful Product Launch:</strong> The product line was successfully launched with no security incidents or vulnerabilities discovered by external researchers.</li>
+          <li><strong>Enhanced Brand Reputation:</strong> The client was able to market their products as having undergone rigorous security testing, enhancing their brand reputation in a market increasingly concerned about IoT security.</li>
+          <li><strong>Regulatory Compliance:</strong> The security improvements ensured compliance with emerging IoT security regulations in multiple markets, including the EU Cyber Resilience Act and US IoT security laws.</li>
+          <li><strong>Security as a Differentiator:</strong> The client was able to use their enhanced security posture as a market differentiator against competitors with less secure products.</li>
+          <li><strong>Improved Security Culture:</strong> The assessment process helped foster a stronger security culture within the organization, with security considerations now integrated into the product development lifecycle from the beginning.</li>
+        </ul>
+        
+        <div class="case-study-quote">
+          "The security assessment not only helped us launch a more secure product line but also transformed how we approach security across our organization. We now view security as a competitive advantage rather than just a compliance requirement. Our customers have responded positively to our focus on security, and we've seen increased market share as a result."
+          <div class="case-study-quote-author">— Chief Executive Officer</div>
+        </div>
+      </div>
+      
+      <!-- Skills Demonstrated Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Skills Demonstrated</h2>
+        <p>
+          This IoT security assessment project showcased my expertise in several key areas of cybersecurity:
+        </p>
+        
+        <div class="case-study-skills">
+          <span class="case-study-skill">IoT Security</span>
+          <span class="case-study-skill">Hardware Security</span>
+          <span class="case-study-skill">Firmware Analysis</span>
+          <span class="case-study-skill">Protocol Analysis</span>
+          <span class="case-study-skill">Mobile App Security</span>
+          <span class="case-study-skill">Cloud Security</span>
+          <span class="case-study-skill">Vulnerability Assessment</span>
+          <span class="case-study-skill">Secure Architecture</span>
+          <span class="case-study-skill">Privacy Engineering</span>
+          <span class="case-study-skill">Security Remediation</span>
+        </div>
+        
+        <p>
+          The project required a combination of technical expertise across multiple domains, strategic thinking to prioritize security improvements, and effective communication to convey complex security concepts to various stakeholders.
+        </p>
+      </div>
+      
+      <!-- Testimonial Section -->
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Client Testimonial</h2>
+        
+        <div class="case-study-quote">
+          "Marianne's comprehensive approach to our IoT security assessment was exceptional. Her technical expertise across hardware, firmware, mobile applications, and cloud infrastructure allowed her to identify vulnerabilities that might have been missed with a more narrowly focused assessment. What truly set her apart was her ability to translate complex technical findings into clear, actionable recommendations that our development team could implement. She worked collaboratively with our team throughout the remediation process, providing guidance and support that went beyond the initial assessment. The security improvements resulting from her work have become a cornerstone of our product security strategy and have helped us establish a reputation for security excellence in the competitive smart home market."
+          <div class="case-study-quote-author">— Director of Product Security, SmartLiving Technologies</div>
+        </div>
+      </div>
+      
+      <!-- Navigation -->
+      <div class="case-study-nav">
+        <a href="ransomware-incident-response.html" class="case-study-nav-item case-study-nav-prev">
+          <span class="case-study-nav-icon"><i class="fas fa-arrow-left"></i></span>
+          <span class="case-study-nav-text">
+            <span class="case-study-nav-label">Previous Project</span>
+            <span class="case-study-nav-title">Ransomware Incident Response</span>
+          </span>
+        </a>
+        
+        <a href="zero-trust-implementation.html" class="case-study-nav-item case-study-nav-next">
+          <span class="case-study-nav-text">
+            <span class="case-study-nav-label">Next Project</span>
+            <span class="case-study-nav-title">Zero Trust Implementation</span>
+          </span>
+          <span class="case-study-nav-icon"><i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to Action -->
+  <section class="case-study-cta">
+    <div class="container">
+      <h2 class="case-study-cta-title">Need IoT Security Assessment?</h2>
+      <p class="case-study-cta-text">
+        I provide comprehensive security assessments for IoT devices and ecosystems, helping manufacturers identify and address vulnerabilities before they reach the market.
+      </p>
+      <a href="../index.html#contact" class="btn btn-primary">
+        <i class="fas fa-shield-alt"></i> Contact Me
+      </a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text glitch" data-text="MW_SECURITY">MW_SECURITY</span>
+        </div>
+        
+        <div class="footer-text">
+          <p>&copy; 2025 Marianne Wong. All rights reserved.</p>
+          <p>Junior Cybersecurity Analyst</p>
+        </div>
+        
+        <div class="footer-links">
+          <a href="../index.html#home" class="footer-link">Home</a>
+          <a href="../index.html#about" class="footer-link">About</a>
+          <a href="../index.html#skills" class="footer-link">Skills</a>
+          <a href="../index.html#services" class="footer-link">Services</a>
+          <a href="../index.html#portfolio" class="footer-link">Portfolio</a>
+          <a href="../index.html#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="back-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>
