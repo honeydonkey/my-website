@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Security FAQ Bot | Marianne Wong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #0D0D0D;
+      --dark-2: #1A1A1A;
+      --dark-3: #2D2D30;
+      --light: #F8F8F2;
+      --purple: #9D4EDD;
+      --pink: #FF0A78;
+      --purple-light: #C77DFF;
+      --pink-light: #FF5CA8;
+      --gradient: linear-gradient(135deg, var(--purple), var(--pink));
+    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+    header {
+      padding: 1rem 0;
+      background-color: rgba(13, 13, 13, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .logo-subtitle {
+      font-size: 0.8rem;
+      color: var(--pink-light);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+      padding-bottom: 3px;
+    }
+    nav a:hover {
+      color: var(--purple-light);
+    }
+    section {
+      padding: 3rem 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: var(--purple-light);
+    }
+    h3 {
+      font-size: 1.3rem;
+      color: var(--purple-light);
+      margin-bottom: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      max-width: 800px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: var(--light);
+      border: none;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--light);
+      border: 1px solid var(--purple);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(157, 78, 221, 0.1);
+      color: var(--purple-light);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-image {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border: 3px solid var(--dark-3);
+    }
+    .card {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--purple-light);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    code {
+      font-family: monospace;
+      background-color: var(--dark-2);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    pre {
+      background-color: var(--dark-2);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    pre code {
+      background-color: transparent;
+      padding: 0;
+    }
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background-color: var(--dark-2);
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .grid-item {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .chat-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .chat-header {
+      background: var(--gradient);
+      padding: 1rem;
+      color: var(--light);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .chat-body {
+      background-color: var(--dark-3);
+      padding: 1rem;
+    }
+    .message {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .message-user {
+      align-items: flex-end;
+    }
+    .message-bot {
+      align-items: flex-start;
+    }
+    .message-content {
+      padding: 0.8rem 1rem;
+      border-radius: 18px;
+      max-width: 80%;
+    }
+    .message-user .message-content {
+      background-color: var(--purple);
+      color: var(--light);
+      border-bottom-right-radius: 4px;
+    }
+    .message-bot .message-content {
+      background-color: var(--dark-2);
+      color: var(--light);
+      border-bottom-left-radius: 4px;
+    }
+    .message-time {
+      font-size: 0.7rem;
+      margin-top: 0.3rem;
+      opacity: 0.7;
+    }
+    .chat-input {
+      background-color: var(--dark-2);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 0.8rem;
+      border-radius: 50px;
+      border: none;
+      background-color: var(--dark-3);
+      color: var(--light);
+    }
+    .chat-input button {
+      background: var(--gradient);
+      color: var(--light);
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .metrics-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .metric-item {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      flex: 1;
+      min-width: 180px;
+    }
+    .metric-number {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--purple-light);
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .metrics-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <div class="logo-title">Marianne Wong</div>
+          <div class="logo-subtitle">Junior Cybersecurity Analyst</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <a href="../index.html#projects" class="back-link" style="font-size: 1.5rem; display: inline-block;">←</a>
+      </div>
+      
+      <h1 style="text-align: center; margin-bottom: 2rem;">AI Security FAQ Bot</h1>
+      
+      <div>
+        <span class="badge">AI/ML</span>
+        <span class="badge">Natural Language Processing</span>
+        <span class="badge">Python</span>
+        <span class="badge">Slack Integration</span>
+        <span class="badge">Security Awareness</span>
+      </div>
+      
+      <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="AI Security FAQ Bot" class="project-image">
+      
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>The AI Security FAQ Bot is an intelligent chatbot I developed to automate responses to employees' security-related questions. This solution leverages natural language processing and machine learning to provide accurate, consistent information about security policies, procedures, and best practices, reducing the workload on the security team while improving the accessibility of security information.</p>
+      </div>
+      
+      <h3>Problem Statement</h3>
+      <p>Security teams often face a high volume of repetitive questions from employees about security policies and procedures. This creates several challenges:</p>
+      <ul>
+        <li>Security analysts spend significant time answering basic questions instead of focusing on critical security tasks</li>
+        <li>Employees experience delays in getting answers, leading to potential security shortcuts or workarounds</li>
+        <li>Inconsistent responses to similar questions create confusion about security requirements</li>
+        <li>Limited availability of security personnel outside business hours leaves questions unanswered</li>
+        <li>Difficulty tracking common security questions to identify areas needing better documentation or training</li>
+      </ul>
+      
+      <h3>Solution</h3>
+      <p>I designed and implemented an AI-powered chatbot that:</p>
+      <ul>
+        <li>Automatically responds to common security questions in natural language</li>
+        <li>Integrates with Slack for seamless employee interaction</li>
+        <li>Provides consistent, policy-compliant answers across the organization</li>
+        <li>Escalates complex questions to security team members when necessary</li>
+        <li>Continuously learns from new questions and feedback to improve accuracy</li>
+        <li>Collects metrics on question types to inform security awareness initiatives</li>
+      </ul>
+      
+      <div class="chat-container">
+        <div class="chat-header">
+          <span>SecurityBot</span>
+        </div>
+        <div class="chat-body">
+          <div class="message message-user">
+            <div class="message-content">What's our policy on using personal devices for work?</div>
+            <div class="message-time">10:42 AM</div>
+          </div>
+          <div class="message message-bot">
+            <div class="message-content">According to our BYOD policy (last updated March 2025), personal devices may be used for work purposes if they meet the following requirements:<br><br>1. Device must be enrolled in our Mobile Device Management (MDM) system<br>2. Device must have encryption enabled<br>3. Device must use a strong passcode/biometric authentication<br>4. Company data must be accessed only through approved applications<br><br>For full details, please see the BYOD Policy in the Security Portal. Would you like me to send you the link?</div>
+            <div class="message-time">10:42 AM</div>
+          </div>
+          <div class="message message-user">
+            <div class="message-content">Yes, please send the link</div>
+            <div class="message-time">10:43 AM</div>
+          </div>
+          <div class="message message-bot">
+            <div class="message-content">Here's the link to our BYOD Policy: https://securityportal.company.com/policies/byod-policy<br><br>Let me know if you have any other questions!</div>
+            <div class="message-time">10:43 AM</div>
+          </div>
+        </div>
+        <div class="chat-input">
+          <input type="text" placeholder="Type your security question...">
+          <button>Send</button>
+        </div>
+      </div>
+      
+      <div class="metrics-container">
+        <div class="metric-item">
+          <div class="metric-number">87%</div>
+          <div>Question resolution rate</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">5.2k</div>
+          <div>Monthly inquiries handled</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">92%</div>
+          <div>User satisfaction rating</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">24/7</div>
+          <div>Availability</div>
+        </div>
+      </div>
+      
+      <h3>Technical Implementation</h3>
+      
+      <div class="card">
+        <h4>Architecture</h4>
+        <p>The AI Security FAQ Bot is built on a modular architecture with the following components:</p>
+        <ul>
+          <li><strong>Natural Language Understanding (NLU) Engine:</strong> Processes and interprets user queries</li>
+          <li><strong>Knowledge Base:</strong> Structured repository of security information and policies</li>
+          <li><strong>Response Generator:</strong> Creates contextually appropriate answers</li>
+          <li><strong>Slack Integration:</strong> Handles messaging platform interactions</li>
+          <li><strong>Learning Module:</strong> Improves responses based on feedback and new data</li>
+          <li><strong>Analytics Dashboard:</strong> Tracks usage patterns and effectiveness</li>
+        </ul>
+      </div>
+      
+      <h3>Technologies Used</h3>
+      <ul>
+        <li><strong>Python:</strong> Core programming language</li>
+        <li><strong>TensorFlow & PyTorch:</strong> For NLP model development</li>
+        <li><strong>BERT:</strong> Pre-trained language model for understanding context</li>
+        <li><strong>Flask:</strong> Web framework for API endpoints</li>
+        <li><strong>MongoDB:</strong> Database for knowledge base and conversation history</li>
+        <li><strong>Slack API:</strong> For messaging platform integration</li>
+        <li><strong>Docker & Kubernetes:</strong> For containerization and deployment</li>
+        <li><strong>Elasticsearch:</strong> For efficient knowledge base searching</li>
+      </ul>
+      
+      <h3>Development Process</h3>
+      
+      <div class="grid">
+        <div class="grid-item">
+          <h4>1. Knowledge Base Creation</h4>
+          <p>The first phase involved building a comprehensive knowledge base:</p>
+          <ul>
+            <li>Collected and organized security policies and procedures</li>
+            <li>Conducted interviews with security team to identify common questions</li>
+            <li>Created structured FAQ database with tagged categories</li>
+            <li>Developed knowledge graph to connect related security concepts</li>
+            <li>Implemented version control to maintain policy accuracy</li>
+          </ul>
+        </div>
+        
+        <div class="grid-item">
+          <h4>2. NLP Model Development</h4>
+          <p>The NLP capabilities were developed through:</p>
+          <ul>
+            <li>Fine-tuning BERT model on security domain language</li>
+            <li>Creating intent recognition for question classification</li>
+            <li>Implementing entity extraction for key information</li>
+            <li>Developing context awareness for multi-turn conversations</li>
+            <li>Training on historical security questions and answers</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="grid">
+        <div class="grid-item">
+          <h4>3. Integration & Deployment</h4>
+          <p>The system was integrated into the company infrastructure:</p>
+          <ul>
+            <li>Built Slack bot interface with interactive components</li>
+            <li>Implemented secure API endpoints for knowledge base access</li>
+            <li>Created escalation workflows for complex questions</li>
+            <li>Deployed containerized solution in company cloud environment</li>
+            <li>Established monitoring and logging for system health</li>
+          </ul>
+        </div>
+        
+        <div class="grid-item">
+          <h4>4. Continuous Learning</h4>
+          <p>The bot improves over time through:</p>
+          <ul>
+            <li>Feedback collection after each interaction</li>
+            <li>Regular retraining with new conversation data</li>
+            <li>Automated knowledge base updates when policies change</li>
+            <li>Human review of low-confidence responses</li>
+            <li>A/B testing of different response formats</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h3>Example Code Snippet</h3>
+      <p>The following code demonstrates the intent classification component of the bot:</p>
+      
+      <pre><code>import tensorflow as tf
+from transformers import BertTokenizer, TFBertForSequenceClassification
+import numpy as np
+
+class SecurityIntentClassifier:
+    """Classifies security questions into appropriate intent categories"""
+    
+    def __init__(self, model_path, num_labels=12):
+        self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        self.model = TFBertForSequenceClassification.from_pretrained(
+            model_path, 
+            num_labels=num_labels
+        )
+        self.intent_labels = [
+            'password_policy', 'data_handling', 'incident_reporting',
+            'access_control', 'byod_policy', 'email_security',
+            'physical_security', 'remote_work', 'software_approval',
+            'compliance', 'social_engineering', 'general_inquiry'
+        ]
+    
+    def classify_intent(self, query):
+        """Determine the security intent of a user query"""
+        # Tokenize and prepare input
+        inputs = self.tokenizer(
+            query,
+            padding=True,
+            truncation=True,
+            return_tensors="tf",
+            max_length=128
+        )
+        
+        # Get prediction
+        outputs = self.model(inputs)
+        logits = outputs.logits
+        probabilities = tf.nn.softmax(logits, axis=1).numpy()[0]
+        
+        # Get top 2 predictions for potential multi-intent questions
+        top_intents = []
+        top_indices = np.argsort(probabilities)[::-1][:2]
+        
+        for idx in top_indices:
+            if probabilities[idx] > 0.2:  # Confidence threshold
+                top_intents.append({
+                    'intent': self.intent_labels[idx],
+                    'confidence': float(probabilities[idx])
+                })
+        
+        return top_intents
+    
+    def get_followup_questions(self, intent):
+        """Generate appropriate followup questions based on intent"""
+        followups = {
+            'password_policy': ["When did you last change your password?", 
+                               "Are you using a password manager?"],
+            'data_handling': ["What type of data are you working with?",
+                             "Is this data classified as sensitive?"],
+            # Additional followups for other intents...
+        }
+        
+        return followups.get(intent, [])
+
+
+# Example usage
+if __name__ == "__main__":
+    classifier = SecurityIntentClassifier("models/security_intent_classifier")
+    
+    # Example query
+    query = "What's the policy on using my personal phone for work email?"
+    
+    # Classify intent
+    intents = classifier.classify_intent(query)
+    print(f"Query: {query}")
+    print(f"Detected intents: {intents}")
+    
+    # Get relevant followup questions
+    if intents:
+        primary_intent = intents[0]['intent']
+        followups = classifier.get_followup_questions(primary_intent)
+        print(f"Suggested followups: {followups}")</code></pre>
+      
+      <h3>Results & Impact</h3>
+      
+      <div class="card">
+        <h4>Key Achievements</h4>
+        <ul>
+          <li>Reduced security team's time spent on routine questions by 62%</li>
+          <li>Decreased average response time from 4.2 hours to 12 seconds</li>
+          <li>Successfully resolved 87% of security inquiries without human intervention</li>
+          <li>Improved employee satisfaction with security support from 67% to 92%</li>
+          <li>Identified key knowledge gaps that informed security awareness training</li>
+          <li>Provided 24/7 security guidance, particularly valuable for global teams</li>
+          <li>Generated valuable metrics on security concerns across the organization</li>
+        </ul>
+      </div>
+      
+      <h3>Challenges & Solutions</h3>
+      
+      <div class="grid">
+        <div class="grid-item">
+          <h4>Challenge: Technical Jargon</h4>
+          <p>Employees often used non-technical language for security concepts, making intent recognition difficult.</p>
+          <p><strong>Solution:</strong> Implemented synonym mapping and trained the model on various phrasings of the same questions. Added a "did you mean" feature for ambiguous queries.</p>
+        </div>
+        
+        <div class="grid-item">
+          <h4>Challenge: Policy Updates</h4>
+          <p>Security policies changed regularly, risking outdated information in responses.</p>
+          <p><strong>Solution:</strong> Created an automated system to flag affected knowledge base entries when policies were updated, with a review workflow for security team approval.</p>
+        </div>
+      </div>
+      
+      <div class="grid">
+        <div class="grid-item">
+          <h4>Challenge: Complex Questions</h4>
+          <p>Some questions required nuanced understanding of specific situations.</p>
+          <p><strong>Solution:</strong> Implemented a confidence threshold system that escalated low-confidence queries to human experts, with the conversation history for context.</p>
+        </div>
+        
+        <div class="grid-item">
+          <h4>Challenge: User Adoption</h4>
+          <p>Initial hesitation from employees to use an AI system for security guidance.</p>
+          <p><strong>Solution:</strong> Conducted demos showing quick response times, added personalization features, and implemented a feedback system that visibly improved responses.</p>
+        </div>
+      </div>
+      
+      <h3>Future Enhancements</h3>
+      <p>Planned improvements for the AI Security FAQ Bot include:</p>
+      <ul>
+        <li>Integration with ticketing systems for seamless escalation workflow</li>
+        <li>Multilingual support for global offices</li>
+        <li>Proactive security alerts based on user role and recent activities</li>
+        <li>Voice interface for hands-free operation</li>
+        <li>Expanded platform support (Microsoft Teams, email, company intranet)</li>
+        <li>Personalized security recommendations based on user behavior patterns</li>
+      </ul>
+      
+      <div style="margin-top: 3rem; text-align: center;">
+        <a href="../index.html#projects" class="btn btn-outline">Back to Projects</a>
+        <a href="../index.html#contact" class="btn btn-primary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Marianne Wong. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

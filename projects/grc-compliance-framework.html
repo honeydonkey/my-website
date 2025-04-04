@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRC Compliance Framework | Marianne Wong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #0D0D0D;
+      --dark-2: #1A1A1A;
+      --dark-3: #2D2D30;
+      --light: #F8F8F2;
+      --purple: #9D4EDD;
+      --pink: #FF0A78;
+      --purple-light: #C77DFF;
+      --pink-light: #FF5CA8;
+      --gradient: linear-gradient(135deg, var(--purple), var(--pink));
+    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+    header {
+      padding: 1rem 0;
+      background-color: rgba(13, 13, 13, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .logo-subtitle {
+      font-size: 0.8rem;
+      color: var(--pink-light);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+      padding-bottom: 3px;
+    }
+    nav a:hover {
+      color: var(--purple-light);
+    }
+    section {
+      padding: 3rem 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: var(--purple-light);
+    }
+    h3 {
+      font-size: 1.3rem;
+      color: var(--purple-light);
+      margin-bottom: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      max-width: 800px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: var(--light);
+      border: none;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--light);
+      border: 1px solid var(--purple);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(157, 78, 221, 0.1);
+      color: var(--purple-light);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-image {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border: 3px solid var(--dark-3);
+    }
+    .card {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--purple-light);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    code {
+      font-family: monospace;
+      background-color: var(--dark-2);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    pre {
+      background-color: var(--dark-2);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    pre code {
+      background-color: transparent;
+      padding: 0;
+    }
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background-color: var(--dark-2);
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .grid-item {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .module {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--purple);
+    }
+    .module h4 {
+      color: var(--purple-light);
+      margin-bottom: 0.5rem;
+    }
+    .stats-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .stat-item {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--purple-light);
+      margin-bottom: 0.5rem;
+    }
+    .compliance-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .compliance-table th,
+    .compliance-table td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid var(--dark-2);
+    }
+    .compliance-table th {
+      background-color: rgba(157, 78, 221, 0.1);
+      color: var(--purple-light);
+      font-weight: 500;
+    }
+    .compliance-table tr:hover {
+      background-color: rgba(157, 78, 221, 0.05);
+    }
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <div class="logo-title">Marianne Wong</div>
+          <div class="logo-subtitle">Junior Cybersecurity Analyst</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <a href="../index.html#projects" class="back-link" style="font-size: 1.5rem; display: inline-block;">←</a>
+      </div>
+      
+      <h1 style="text-align: center; margin-bottom: 2rem;">GRC Compliance Framework</h1>
+      
+      <div>
+        <span class="badge">Governance</span>
+        <span class="badge">Risk Management</span>
+        <span class="badge">Compliance</span>
+        <span class="badge">Policy Development</span>
+        <span class="badge">Audit</span>
+      </div>
+      
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="GRC Compliance Framework" class="project-image">
+      
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>The GRC Compliance Framework is a comprehensive system I developed to help organizations align their security practices with industry standards and regulatory requirements. This framework integrates governance, risk management, and compliance processes into a unified approach that enhances security posture while ensuring regulatory adherence.</p>
+      </div>
+      
+      <h3>Problem Statement</h3>
+      <p>Organizations face increasing pressure to comply with multiple regulatory frameworks (GDPR, HIPAA, PCI DSS, etc.) while effectively managing security risks. Many struggle with:</p>
+      <ul>
+        <li>Siloed approaches to governance, risk, and compliance</li>
+        <li>Redundant compliance activities across different regulations</li>
+        <li>Inefficient manual processes for policy management and evidence collection</li>
+        <li>Difficulty demonstrating compliance to auditors and stakeholders</li>
+        <li>Challenges in translating compliance requirements into actionable security controls</li>
+      </ul>
+      
+      <h3>Solution</h3>
+      <p>I designed and implemented a unified GRC framework that:</p>
+      <ul>
+        <li>Maps controls across multiple regulatory frameworks to eliminate redundancy</li>
+        <li>Establishes a centralized policy management system with version control</li>
+        <li>Implements automated compliance monitoring and evidence collection</li>
+        <li>Creates a risk register with assessment methodologies and treatment plans</li>
+        <li>Develops dashboards for real-time compliance visibility</li>
+        <li>Streamlines the audit process with organized evidence repositories</li>
+      </ul>
+      
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number">40%</div>
+          <div>Reduction in audit preparation time</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">65%</div>
+          <div>Decrease in compliance gaps</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div>Regulatory frameworks integrated</div>
+        </div>
+      </div>
+      
+      <h3>Framework Components</h3>
+      
+      <div class="module">
+        <h4>1. Governance Structure</h4>
+        <p>Established a comprehensive governance model including:</p>
+        <ul>
+          <li><strong>Security Steering Committee:</strong> Cross-functional leadership team overseeing security strategy</li>
+          <li><strong>Policy Framework:</strong> Hierarchical structure of policies, standards, procedures, and guidelines</li>
+          <li><strong>Roles & Responsibilities Matrix:</strong> RACI chart defining accountability across the organization</li>
+          <li><strong>Security Metrics Program:</strong> KPIs and KRIs to measure security and compliance effectiveness</li>
+          <li><strong>Executive Reporting:</strong> Dashboard and reporting templates for leadership visibility</li>
+        </ul>
+      </div>
+      
+      <div class="module">
+        <h4>2. Risk Management Program</h4>
+        <p>Implemented a structured approach to risk management:</p>
+        <ul>
+          <li><strong>Risk Assessment Methodology:</strong> Standardized process for identifying and evaluating risks</li>
+          <li><strong>Risk Register:</strong> Centralized inventory of identified risks with owners and treatment plans</li>
+          <li><strong>Risk Treatment Framework:</strong> Decision matrix for accept, mitigate, transfer, or avoid options</li>
+          <li><strong>Continuous Monitoring:</strong> Ongoing assessment of risk landscape and control effectiveness</li>
+          <li><strong>Third-Party Risk Management:</strong> Vendor assessment process and ongoing monitoring</li>
+        </ul>
+      </div>
+      
+      <div class="module">
+        <h4>3. Compliance Management System</h4>
+        <p>Developed a unified compliance approach covering multiple frameworks:</p>
+        <ul>
+          <li><strong>Regulatory Mapping:</strong> Cross-reference of controls across different frameworks</li>
+          <li><strong>Control Catalog:</strong> Comprehensive inventory of technical and administrative controls</li>
+          <li><strong>Evidence Repository:</strong> Organized system for compliance documentation and artifacts</li>
+          <li><strong>Compliance Calendar:</strong> Schedule of assessments, audits, and reporting deadlines</li>
+          <li><strong>Gap Analysis Tool:</strong> Methodology for identifying and addressing compliance gaps</li>
+        </ul>
+      </div>
+      
+      <h3>Regulatory Coverage</h3>
+      <p>The framework addresses requirements from multiple regulatory standards:</p>
+      
+      <table class="compliance-table">
+        <thead>
+          <tr>
+            <th>Framework</th>
+            <th>Focus Area</th>
+            <th>Implementation Approach</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GDPR</td>
+            <td>Data Privacy</td>
+            <td>Implemented data mapping, privacy impact assessments, and consent management</td>
+          </tr>
+          <tr>
+            <td>ISO 27001</td>
+            <td>Information Security</td>
+            <td>Aligned policies and controls with ISMS requirements and control objectives</td>
+          </tr>
+          <tr>
+            <td>PCI DSS</td>
+            <td>Payment Card Security</td>
+            <td>Implemented cardholder data protection controls and secure coding practices</td>
+          </tr>
+          <tr>
+            <td>HIPAA</td>
+            <td>Healthcare Data</td>
+            <td>Established PHI handling procedures and business associate management</td>
+          </tr>
+          <tr>
+            <td>SOC 2</td>
+            <td>Service Provider Controls</td>
+            <td>Developed control framework addressing security, availability, and confidentiality</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>Implementation Methodology</h3>
+      
+      <div class="card">
+        <h4>Phase 1: Assessment & Gap Analysis</h4>
+        <ul>
+          <li>Conducted comprehensive review of existing governance structure</li>
+          <li>Performed gap analysis against target regulatory frameworks</li>
+          <li>Assessed current risk management practices and maturity</li>
+          <li>Evaluated existing policy framework and documentation</li>
+          <li>Identified key stakeholders and established project governance</li>
+        </ul>
+        
+        <h4>Phase 2: Framework Design</h4>
+        <ul>
+          <li>Developed unified control framework with regulatory mapping</li>
+          <li>Created policy templates and documentation standards</li>
+          <li>Designed risk assessment methodology and scoring system</li>
+          <li>Established compliance monitoring processes and metrics</li>
+          <li>Developed implementation roadmap and prioritization framework</li>
+        </ul>
+        
+        <h4>Phase 3: Implementation</h4>
+        <ul>
+          <li>Deployed policy management system with approval workflows</li>
+          <li>Implemented risk register and assessment tools</li>
+          <li>Established evidence collection and retention processes</li>
+          <li>Developed compliance dashboards and reporting mechanisms</li>
+          <li>Conducted training for key stakeholders and system users</li>
+        </ul>
+        
+        <h4>Phase 4: Validation & Continuous Improvement</h4>
+        <ul>
+          <li>Performed internal audit to validate framework effectiveness</li>
+          <li>Established continuous monitoring and improvement processes</li>
+          <li>Developed metrics to measure GRC program maturity</li>
+          <li>Created feedback mechanisms for ongoing refinement</li>
+          <li>Implemented automated compliance testing where feasible</li>
+        </ul>
+      </div>
+      
+      <h3>Tools & Technologies</h3>
+      <ul>
+        <li><strong>Policy Management:</strong> SharePoint with custom workflows for document control</li>
+        <li><strong>Risk Management:</strong> Custom-built risk register using Power Apps and Power BI</li>
+        <li><strong>Compliance Tracking:</strong> Integrated GRC platform with custom dashboards</li>
+        <li><strong>Evidence Collection:</strong> Automated scripts and integrations with security tools</li>
+        <li><strong>Audit Management:</strong> Customized tracking system for findings and remediation</li>
+        <li><strong>Reporting:</strong> Power BI dashboards with role-based access controls</li>
+      </ul>
+      
+      <h3>Results & Impact</h3>
+      
+      <div class="card">
+        <h4>Key Achievements</h4>
+        <ul>
+          <li>Reduced audit preparation time by 40% through centralized evidence repository</li>
+          <li>Decreased compliance gaps by 65% through comprehensive control mapping</li>
+          <li>Improved risk visibility with real-time dashboards for executive leadership</li>
+          <li>Successfully passed external audits for ISO 27001 and SOC 2 with minimal findings</li>
+          <li>Reduced policy review and approval cycle time from weeks to days</li>
+          <li>Established consistent risk scoring methodology across the organization</li>
+          <li>Created reusable control sets that satisfy multiple regulatory requirements</li>
+        </ul>
+      </div>
+      
+      <h3>Lessons Learned</h3>
+      <p>Throughout the development and implementation of this framework, several valuable insights emerged:</p>
+      <ul>
+        <li>Executive sponsorship is critical for successful GRC implementation</li>
+        <li>A phased approach with quick wins helps maintain momentum and stakeholder support</li>
+        <li>Integration with existing business processes improves adoption and reduces resistance</li>
+        <li>Automation should be applied strategically to high-volume, repetitive compliance tasks</li>
+        <li>Regular communication about compliance status builds a stronger security culture</li>
+        <li>Cross-functional teams are essential for addressing the diverse aspects of GRC</li>
+      </ul>
+      
+      <h3>Future Enhancements</h3>
+      <p>Planned improvements for the framework include:</p>
+      <ul>
+        <li>Integration with threat intelligence feeds for risk-informed compliance</li>
+        <li>Implementation of AI-assisted control testing and evidence validation</li>
+        <li>Enhanced automation of compliance monitoring through API integrations</li>
+        <li>Development of predictive analytics for compliance risk forecasting</li>
+        <li>Expansion to cover additional regulatory frameworks and standards</li>
+        <li>Mobile application for on-the-go compliance status monitoring</li>
+      </ul>
+      
+      <div style="margin-top: 3rem; text-align: center;">
+        <a href="../index.html#projects" class="btn btn-outline">Back to Projects</a>
+        <a href="../index.html#contact" class="btn btn-primary">Contact Me</a>
+      </div>

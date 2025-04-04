@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Marianne Wong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #0D0D0D;
+      --dark-2: #1A1A1A;
+      --dark-3: #2D2D30;
+      --light: #F8F8F2;
+      --purple: #9D4EDD;
+      --pink: #FF0A78;
+      --purple-light: #C77DFF;
+      --pink-light: #FF5CA8;
+      --gradient: linear-gradient(135deg, var(--purple), var(--pink));
+    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+    header {
+      padding: 1rem 0;
+      background-color: rgba(13, 13, 13, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .logo-subtitle {
+      font-size: 0.8rem;
+      color: var(--pink-light);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+      padding-bottom: 3px;
+    }
+    nav a:hover {
+      color: var(--purple-light);
+    }
+    .error-page {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: 8rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    .error-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--purple-light);
+    }
+    .error-message {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: var(--light);
+      border: none;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--light);
+      border: 1px solid var(--purple);
+    }
+    .terminal-window {
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(157, 78, 221, 0.3);
+    }
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(157, 78, 221, 0.3);
+    }
+    .terminal-button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .terminal-button.close {
+      background-color: #ff5f56;
+    }
+    .terminal-button.minimize {
+      background-color: #ffbd2e;
+    }
+    .terminal-button.maximize {
+      background-color: #27c93f;
+    }
+    .terminal-title {
+      margin-left: auto;
+      margin-right: auto;
+      font-family: monospace;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .terminal-body {
+      padding: 1.5rem;
+      font-family: monospace;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--light);
+    }
+    .terminal-line {
+      display: flex;
+      margin-bottom: 0.5rem;
+    }
+    .terminal-prompt {
+      color: var(--purple-light);
+      margin-right: 0.5rem;
+    }
+    .terminal-command {
+      color: var(--light);
+    }
+    .terminal-output {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1rem;
+    }
+    .terminal-error {
+      color: var(--pink);
+    }
+    .binary-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.05;
+    }
+    .binary-digit {
+      position: absolute;
+      font-family: monospace;
+      color: var(--purple);
+      opacity: 0.2;
+      font-size: 1.5rem;
+    }
+    footer {
+      background-color: var(--dark-2);
+      padding: 2rem 0;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 5rem;
+      }
+      .error-title {
+        font-size: 1.5rem;
+      }
+      .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="binary-bg" id="binaryBg"></div>
+  
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <div class="logo-title">Marianne Wong</div>
+          <div class="logo-subtitle">Junior Cybersecurity Analyst</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Error Page Content -->
+  <div class="error-page">
+    <div class="container">
+      <div class="error-content">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-message">
+          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Please check the URL or navigate back to the homepage.
+        </p>
+        
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-button close"></div>
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
+            <div class="terminal-title">error-trace.log</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command">locate requested_page</span>
+            </div>
+            <div class="terminal-output terminal-error">
+              ERROR: Resource not found in database<br>
+              Status code: 404<br>
+              Timestamp: <span id="timestamp"></span><br>
+              Path: <span id="requestPath"></span><br>
+              Trace ID: <span id="traceId"></span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command">suggest_recovery</span>
+            </div>
+            <div class="terminal-output">
+              Recommended action: Return to homepage<br>
+              Alternative: Check URL for typos<br>
+              If problem persists, contact system administrator
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <a href="index.html" class="btn btn-primary">Back to Homepage</a>
+          <a href="#" onclick="window.history.back(); return false;" class="btn btn-outline">Go Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Marianne Wong. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Generate random binary background
+    document.addEventListener('DOMContentLoaded', function() {
+      const binaryBg = document.getElementById('binaryBg');
+      
+      // Add binary digits
+      for (let i = 0; i < 100; i++) {
+        const digit = document.createElement('span');
+        digit.className = 'binary-digit';
+        digit.textContent = Math.random() > 0.5 ? '0' : '1';
+        digit.style.left = `${Math.random() * 100}%`;
+        digit.style.top = `${Math.random() * 100}%`;
+        digit.style.opacity = Math.random() * 0.3 + 0.1;
+        digit.style.fontSize = `${Math.random() * 2 + 0.8}rem`;
+        binaryBg.appendChild(digit);
+      }
+      
+      // Set dynamic values in terminal
+      document.getElementById('timestamp').textContent = new Date().toISOString();
+      document.getElementById('requestPath').textContent = window.location.pathname;
+      document.getElementById('traceId').textContent = Math.random().toString(36).substring(2, 15) + 
+                                                      Math.random().toString(36).substring(2, 15);
+    });
+  </script>
+</body>
+</html>
