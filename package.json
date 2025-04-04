@@ -1,0 +1,13 @@
+{
+  "name": "cybersecurity-portfolio",
+  "version": "1.0.0",
+  "description": "A personal portfolio website for a cybersecurity analyst",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "serve": "^14.0.0"
+  }
+}
