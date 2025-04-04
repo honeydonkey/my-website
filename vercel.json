@@ -1,12 +1,7 @@
 {
   "version": 2,
   "name": "cybersecurity-portfolio-final",
-  "builds": [
-    {
-      "src": "**/*",
-      "use": "@vercel/static"
-    }
-  ],
+  "outputDirectory": "public",
   "routes": [
     {
       "src": "/(.*)",

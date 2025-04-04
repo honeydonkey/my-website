@@ -71,11 +71,23 @@ Alternatively, you can deploy directly from the Vercel dashboard:
 3. Vercel will automatically detect the project type and configure the build settings
 4. Click "Deploy" to publish your portfolio
 
+### Deployment Configuration
+
 The deployment configuration is handled by the `vercel.json` file, which includes:
-- Static site configuration
+- Static site configuration with `outputDirectory` set to "public"
 - Custom routing rules
 - 404 page handling
 - Security headers
+
+### Troubleshooting Deployment Issues
+
+If you encounter a "Missing public directory" error during deployment, the issue is related to Vercel's build process. This portfolio has been configured to resolve this issue by:
+
+1. Setting `"outputDirectory": "public"` in vercel.json
+2. Adding a build script in package.json that copies all necessary files to the public directory
+3. Ensuring the build process creates the expected directory structure
+
+The build script (`npm run build`) will create a public directory containing all the files needed for deployment. Vercel will then serve the files from this directory.
 
 ## Customization
 

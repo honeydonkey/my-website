@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "serve",
-    "build": "echo 'No build step required for static site'"
+    "build": "mkdir -p public && cp -r index.html 404.html projects resume .gitignore README.md public/"
   },
   "keywords": [
     "cybersecurity",
