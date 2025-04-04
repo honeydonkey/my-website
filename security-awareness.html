@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Awareness Training Program | Marianne Wong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #0D0D0D;
+      --dark-2: #1A1A1A;
+      --dark-3: #2D2D30;
+      --light: #F8F8F2;
+      --purple: #9D4EDD;
+      --pink: #FF0A78;
+      --purple-light: #C77DFF;
+      --pink-light: #FF5CA8;
+      --gradient: linear-gradient(135deg, var(--purple), var(--pink));
+    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+    header {
+      padding: 1rem 0;
+      background-color: rgba(13, 13, 13, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .logo-subtitle {
+      font-size: 0.8rem;
+      color: var(--pink-light);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+      padding-bottom: 3px;
+    }
+    nav a:hover {
+      color: var(--purple-light);
+    }
+    section {
+      padding: 3rem 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: var(--purple-light);
+    }
+    h3 {
+      font-size: 1.3rem;
+      color: var(--purple-light);
+      margin-bottom: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      max-width: 800px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: var(--light);
+      border: none;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--light);
+      border: 1px solid var(--purple);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(157, 78, 221, 0.1);
+      color: var(--purple-light);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-image {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border: 3px solid var(--dark-3);
+    }
+    .card {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--purple-light);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    code {
+      font-family: monospace;
+      background-color: var(--dark-2);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    pre {
+      background-color: var(--dark-2);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    pre code {
+      background-color: transparent;
+      padding: 0;
+    }
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background-color: var(--dark-2);
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .grid-item {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .module {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--purple);
+    }
+    .module h4 {
+      color: var(--purple-light);
+      margin-bottom: 0.5rem;
+    }
+    .stats-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .stat-item {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--purple-light);
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <div class="logo-title">Marianne Wong</div>
+          <div class="logo-subtitle">Junior Cybersecurity Analyst</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <a href="../index.html#projects" class="back-link" style="font-size: 1.5rem; display: inline-block;">←</a>
+      </div>
+      
+      <h1 style="text-align: center; margin-bottom: 2rem;">Security Awareness Training Program</h1>
+      
+      <div>
+        <span class="badge">Training</span>
+        <span class="badge">Phishing</span>
+        <span class="badge">Social Engineering</span>
+        <span class="badge">Awareness</span>
+        <span class="badge">Education</span>
+      </div>
+      
+      <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Security Awareness Training" class="project-image">
+      
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>The Security Awareness Training Program is a comprehensive educational initiative designed to enhance the security posture of organizations by training employees to recognize and respond appropriately to various cybersecurity threats. This program combines interactive learning modules, simulated phishing campaigns, and ongoing assessments to create a security-conscious culture within the organization.</p>
+      </div>
+      
+      <h3>Problem Statement</h3>
+      <p>Despite significant investments in technical security controls, human error remains one of the leading causes of security breaches. Many organizations lack structured approaches to educate their workforce about evolving cyber threats, leaving them vulnerable to social engineering attacks, phishing attempts, and other security incidents that exploit human behavior rather than technical vulnerabilities.</p>
+      
+      <h3>Solution</h3>
+      <p>I developed a multi-faceted security awareness program that addresses the human element of cybersecurity through:</p>
+      <ul>
+        <li>Engaging, role-specific training modules that teach practical security skills</li>
+        <li>Realistic phishing simulations that provide safe learning experiences</li>
+        <li>Continuous reinforcement through microlearning and regular communications</li>
+        <li>Metrics and reporting to track progress and identify areas for improvement</li>
+        <li>Gamification elements to increase engagement and knowledge retention</li>
+      </ul>
+      
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number">85%</div>
+          <div>Reduction in successful phishing attempts</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">93%</div>
+          <div>Employee completion rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">76%</div>
+          <div>Increase in security incident reporting</div>
+        </div>
+      </div>
+      
+      <h3>Program Components</h3>
+      
+      <div class="module">
+        <h4>1. Core Training Modules</h4>
+        <p>A series of interactive online courses covering essential security topics:</p>
+        <ul>
+          <li><strong>Security Fundamentals:</strong> Basic principles and importance of cybersecurity</li>
+          <li><strong>Email Security:</strong> Identifying and handling suspicious emails</li>
+          <li><strong>Password Management:</strong> Creating and managing strong credentials</li>
+          <li><strong>Social Engineering:</strong> Recognizing manipulation tactics</li>
+          <li><strong>Mobile Device Security:</strong> Protecting smartphones and tablets</li>
+          <li><strong>Data Protection:</strong> Handling sensitive information properly</li>
+          <li><strong>Remote Work Security:</strong> Maintaining security outside the office</li>
+        </ul>
+      </div>
+      
+      <div class="module">
+        <h4>2. Phishing Simulation Platform</h4>
+        <p>A custom-built platform that sends realistic but safe phishing emails to employees:</p>
+        <ul>
+          <li>Graduated difficulty levels based on user progress</li>
+          <li>Immediate feedback and learning opportunities when users fall for simulations</li>
+          <li>Detailed analytics on organization-wide vulnerability</li>
+          <li>Template library with various phishing scenarios (financial, HR, IT support, etc.)</li>
+          <li>Customizable campaign scheduling and targeting</li>
+        </ul>
+      </div>
+      
+      <div class="module">
+        <h4>3. Microlearning Content</h4>
+        <p>Short, focused learning materials delivered regularly to reinforce key concepts:</p>
+        <ul>
+          <li>2-3 minute video clips on specific security topics</li>
+          <li>Infographics and visual aids for quick reference</li>
+          <li>Security tips delivered via email and internal communication channels</li>
+          <li>Quick quizzes to test knowledge retention</li>
+        </ul>
+      </div>
+      
+      <div class="module">
+        <h4>4. Security Champions Program</h4>
+        <p>A network of designated employees who receive advanced training and serve as security advocates:</p>
+        <ul>
+          <li>Peer-to-peer education and support</li>
+          <li>Early warning system for potential security issues</li>
+          <li>Feedback channel for program improvement</li>
+          <li>Recognition system to incentivize participation</li>
+        </ul>
+      </div>
+      
+      <h3>Implementation Approach</h3>
+      
+      <div class="card">
+        <h4>Phase 1: Assessment & Planning</h4>
+        <ul>
+          <li>Conducted baseline security awareness assessment</li>
+          <li>Identified high-risk areas and behaviors</li>
+          <li>Developed customized training curriculum</li>
+          <li>Established metrics and success criteria</li>
+        </ul>
+        
+        <h4>Phase 2: Core Program Development</h4>
+        <ul>
+          <li>Created interactive training modules</li>
+          <li>Developed phishing simulation platform</li>
+          <li>Produced microlearning content</li>
+          <li>Established reporting dashboard</li>
+        </ul>
+        
+        <h4>Phase 3: Pilot & Refinement</h4>
+        <ul>
+          <li>Conducted pilot with select departments</li>
+          <li>Gathered feedback and made improvements</li>
+          <li>Refined content based on user engagement data</li>
+          <li>Adjusted difficulty levels for phishing simulations</li>
+        </ul>
+        
+        <h4>Phase 4: Full Deployment</h4>
+        <ul>
+          <li>Rolled out program organization-wide</li>
+          <li>Launched communications campaign</li>
+          <li>Trained security champions</li>
+          <li>Implemented regular reporting cadence</li>
+        </ul>
+        
+        <h4>Phase 5: Continuous Improvement</h4>
+        <ul>
+          <li>Collected and analyzed program metrics</li>
+          <li>Updated content based on emerging threats</li>
+          <li>Refined approach based on user feedback</li>
+          <li>Expanded program with additional modules</li>
+        </ul>
+      </div>
+      
+      <h3>Technologies & Tools Used</h3>
+      <ul>
+        <li><strong>Learning Management System:</strong> Custom-built platform for delivering training content</li>
+        <li><strong>Phishing Simulation Tool:</strong> Developed using Python and JavaScript</li>
+        <li><strong>Content Creation:</strong> Adobe Creative Suite, Articulate Storyline</li>
+        <li><strong>Analytics Dashboard:</strong> Power BI for metrics visualization</li>
+        <li><strong>Communication Platform:</strong> Integration with Microsoft Teams and Slack</li>
+        <li><strong>Gamification Elements:</strong> Custom leaderboard and badge system</li>
+      </ul>
+      
+      <h3>Results & Impact</h3>
+      
+      <div class="card">
+        <h4>Key Achievements</h4>
+        <ul>
+          <li>Reduced successful phishing attempts by 85% within six months</li>
+          <li>Achieved 93% completion rate for core training modules</li>
+          <li>Increased security incident reporting by 76%</li>
+          <li>Improved average security awareness assessment scores from 64% to 91%</li>
+          <li>Established a network of 25 active security champions across departments</li>
+          <li>Received recognition from executive leadership for program effectiveness</li>
+        </ul>
+      </div>
+      
+      <h3>Sample Training Materials</h3>
+      
+      <div class="grid">
+        <div class="grid-item">
+          <h4>Phishing Awareness Infographic</h4>
+          <p>Created visual guide highlighting common phishing indicators:</p>
+          <ul>
+            <li>Suspicious sender addresses</li>
+            <li>Urgency and pressure tactics</li>
+            <li>Grammar and spelling errors</li>
+            <li>Suspicious links and attachments</li>
+            <li>Unusual requests</li>
+          </ul>
+        </div>
+        
+        <div class="grid-item">
+          <h4>Password Security Guide</h4>
+          <p>Developed comprehensive guide for creating and managing secure passwords:</p>
+          <ul>
+            <li>Password creation techniques</li>
+            <li>Password manager recommendations</li>
+            <li>Multi-factor authentication setup</li>
+            <li>Account security best practices</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h3>Future Enhancements</h3>
+      <p>Planned improvements for the program include:</p>
+      <ul>
+        <li>Integration with threat intelligence feeds to create real-time awareness content</li>
+        <li>Development of role-specific training paths for different departments</li>
+        <li>Implementation of virtual reality simulations for immersive learning experiences</li>
+        <li>Expansion of the security champions program with advanced certification options</li>
+        <li>Creation of industry-specific training modules addressing unique sector challenges</li>
+      </ul>
+      
+      <h3>Lessons Learned</h3>
+      <p>Throughout the development and implementation of this program, several valuable insights emerged:</p>
+      <ul>
+        <li>Engagement increases significantly when training is relevant to employees' specific roles</li>
+        <li>Short, frequent learning interventions are more effective than lengthy annual training</li>
+        <li>Positive reinforcement works better than punitive measures for building security culture</li>
+        <li>Executive sponsorship is crucial for program adoption and success</li>
+        <li>Metrics should focus on behavior change rather than just completion rates</li>
+      </ul>
+      
+      <div style="margin-top: 3rem; text-align: center;">
+        <a href="../index.html#projects" class="btn btn-outline">Back to Projects</a>
+        <a href="../index.html#contact" class="btn btn-primary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Marianne Wong. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

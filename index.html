@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marianne Wong | Junior Cybersecurity Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #0D0D0D;
+      --dark-2: #1A1A1A;
+      --dark-3: #2D2D30;
+      --light: #F8F8F2;
+      --purple: #9D4EDD;
+      --pink: #FF0A78;
+      --purple-light: #C77DFF;
+      --pink-light: #FF5CA8;
+      --gradient: linear-gradient(135deg, var(--purple), var(--pink));
+    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+    header {
+      padding: 1rem 0;
+      background-color: rgba(13, 13, 13, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .logo-subtitle {
+      font-size: 0.8rem;
+      color: var(--pink-light);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+      padding-bottom: 3px;
+    }
+    nav a:hover {
+      color: var(--purple-light);
+    }
+    section {
+      padding: 3rem 0;
+    }
+    section:nth-child(even) {
+      background-color: var(--dark-2);
+    }
+    h1 {
+      font-size: 3rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 2rem;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--gradient);
+    }
+    h3 {
+      font-size: 1.3rem;
+      color: var(--purple-light);
+      margin-bottom: 0.8rem;
+    }
+    p {margin-bottom: 1rem;}
+    .hero {
+      text-align: center;
+      padding: 4rem 0 2rem;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: var(--light);
+    }
+    .btn-outline {
+      border: 1px solid var(--purple);
+      color: var(--light);
+    }
+    .btn-download {
+      display: inline-block;
+      background: var(--gradient);
+      color: var(--light);
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card {
+      background-color: var(--dark-3);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      height: 100%;
+    }
+    .card-content {
+      padding: 1.5rem;
+    }
+    .profile-image {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      border: 3px solid var(--dark-3);
+    }
+    .stats-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 1.5rem 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(157, 78, 221, 0.1);
+      border-radius: 8px;
+      flex: 1;
+      margin: 0 0.5rem;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--purple-light);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(157, 78, 221, 0.1);
+      color: var(--purple-light);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: var(--dark-3);
+      border: 1px solid var(--purple);
+      border-radius: 4px;
+      color: var(--light);
+      margin-bottom: 1rem;
+    }
+    .contact-form button {
+      background: var(--gradient);
+      color: var(--light);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: var(--dark-2);
+      padding: 2rem 0;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      .stats-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .stat-item {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <div class="logo-title">Marianne Wong</div>
+          <div class="logo-subtitle">Junior Cybersecurity Analyst</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Securing Digital Futures</h1>
+      <p>Junior cybersecurity analyst passionate about threat detection, vulnerability assessment, and building secure systems.</p>
+      <div>
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="grid grid-2">
+        <div>
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Profile Photo" class="profile-image">
+          
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-number">10+</div>
+              <div>Projects Completed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">15+</div>
+              <div>Tools Mastered</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div>Languages</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>Hello! I'm Marianne, a junior cybersecurity analyst with a passion for digital forensics and threat detection. I recently completed my Bachelor's degree in Computer Science with a focus on Information Security.</p>
+          
+          <p>During my studies and internships, I've developed a strong foundation in security principles, vulnerability assessment, and incident response. I'm particularly interested in how AI and machine learning can enhance threat detection capabilities.</p>
+          
+          <div style="margin-top: 1rem;">
+            <span class="badge">Security Analysis</span>
+            <span class="badge">Threat Detection</span>
+            <span class="badge">Incident Response</span>
+            <span class="badge">Network Security</span>
+            <span class="badge">Python</span>
+            <span class="badge">SIEM</span>
+          </div>
+          
+          <a href="resume/marianne-wong-resume.pdf" class="btn-download" download>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-content">
+            <h3>Security Operations</h3>
+            <ul>
+              <li>SIEM Implementation</li>
+              <li>Threat Hunting & Analysis</li>
+              <li>Incident Response</li>
+              <li>Digital Forensics</li>
+              <li>Log Analysis</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <h3>Security Tools</h3>
+            <ul>
+              <li>Wireshark, Zeek</li>
+              <li>Splunk, ELK Stack</li>
+              <li>Nessus, Qualys</li>
+              <li>Metasploit, Burp Suite</li>
+              <li>Python, Bash</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <h3>Learning Path</h3>
+            <ul>
+              <li>Pursuing CompTIA Security+</li>
+              <li>Self-study: Ethical Hacking</li>
+              <li>Online courses: OWASP Top 10</li>
+              <li>TryHackMe & HackTheBox challenges</li>
+              <li>Security conferences & webinars</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-content">
+            <h3>Network Traffic Analysis Tool</h3>
+            <p>Developed a Python-based tool that analyzes network traffic patterns to identify potential security threats using machine learning algorithms.</p>
+            <div style="margin-top: 1rem;">
+              <span class="badge">Python</span>
+              <span class="badge">Machine Learning</span>
+              <span class="badge">Network Security</span>
+            </div>
+            <div style="margin-top: 1.5rem; text-align: right;">
+              <a href="projects/network-traffic-analysis.html" style="color: var(--purple-light); text-decoration: none; font-weight: 500;">View Details →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <h3>Vulnerability Management System</h3>
+            <p>Created a web application to track and prioritize security vulnerabilities across an organization's infrastructure.</p>
+            <div style="margin-top: 1rem;">
+              <span class="badge">JavaScript</span>
+              <span class="badge">Node.js</span>
+              <span class="badge">Security Assessment</span>
+            </div>
+            <div style="margin-top: 1.5rem; text-align: right;">
+              <a href="projects/vulnerability-management.html" style="color: var(--purple-light); text-decoration: none; font-weight: 500;">View Details →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <h3>Security Awareness Training Program</h3>
+            <p>Designed and implemented a comprehensive security awareness training program for employees, including phishing simulations and educational materials.</p>
+            <div style="margin-top: 1rem;">
+              <span class="badge">Training</span>
+              <span class="badge">Phishing</span>
+              <span class="badge">Social Engineering</span>
+            </div>
+            <div style="margin-top: 1.5rem; text-align: right;">
+              <a href="projects/security-awareness.html" style="color: var(--purple-light); text-decoration: none; font-weight: 500;">View Details →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 style="text-align: center; position: relative; display: inline-block; margin-bottom: 2rem;">Get In Touch</h2>
+      <style>
+        #contact h2::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      </style>
+      <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, rgba(157, 78, 221, 0.1), rgba(255, 10, 120, 0.1)); border: 1px solid rgba(157, 78, 221, 0.3); padding: 2rem;">
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Interested in working together? Feel free to reach out through any of the channels below.</p>
+        
+        <div style="display: inline-block; margin: 0 auto; text-align: left;">
+          <p style="margin-bottom: 1rem;"><span style="color: var(--purple-light); font-weight: 500; margin-right: 0.5rem;">Email:</span> marianne_wong@protonmail.com</p>
+          <p style="margin-bottom: 1rem;"><span style="color: var(--purple-light); font-weight: 500; margin-right: 0.5rem;">Phone:</span> +1 (555) 123-4567</p>
+          <p style="margin-bottom: 1.5rem;"><span style="color: var(--purple-light); font-weight: 500; margin-right: 0.5rem;">Location:</span> Malaysia</p>
+        </div>
+        
+        <a href="resume/marianne-wong-resume.pdf" class="btn-download" download style="margin-top: 1rem; display: inline-block; padding: 0.8rem 2rem; font-weight: 500;">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Marianne Wong. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

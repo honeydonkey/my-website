@@ -1,0 +1,128 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog
+/Outlines 2 0 R
+/Pages 3 0 R
+>>
+endobj
+
+2 0 obj
+<< /Type /Outlines
+/Count 0
+>>
+endobj
+
+3 0 obj
+<< /Type /Pages
+/Kids [4 0 R]
+/Count 1
+>>
+endobj
+
+4 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/MediaBox [0 0 612 792]
+/Contents 5 0 R
+/Resources << /ProcSet 6 0 R
+/Font << /F1 7 0 R >>
+>>
+>>
+endobj
+
+5 0 obj
+<< /Length 1000 >>
+stream
+BT
+/F1 24 Tf
+50 700 Td
+(Marianne Wong) Tj
+/F1 12 Tf
+0 -20 Td
+(Junior Cybersecurity Analyst) Tj
+0 -15 Td
+(marianne_wong@protonmail.com | 555-123-4567 | Malaysia) Tj
+0 -40 Td
+/F1 16 Tf
+(EDUCATION) Tj
+/F1 12 Tf
+0 -20 Td
+(Bachelor of Science in Computer Science, Cybersecurity Focus) Tj
+0 -15 Td
+(University of Malaysia, 2023) Tj
+0 -40 Td
+/F1 16 Tf
+(SKILLS) Tj
+/F1 12 Tf
+0 -20 Td
+(Security Tools: Wireshark, Nessus, Metasploit, Splunk, ELK Stack) Tj
+0 -15 Td
+(Programming: Python, Bash, PowerShell, SQL) Tj
+0 -15 Td
+(Security Areas: Vulnerability Assessment, Incident Response, Threat Detection) Tj
+0 -15 Td
+(Certifications: CompTIA Security+, CEH, GIAC Security Essentials) Tj
+0 -40 Td
+/F1 16 Tf
+(EXPERIENCE) Tj
+/F1 12 Tf
+0 -20 Td
+(Cybersecurity Intern - TechGuard Solutions) Tj
+0 -15 Td
+(June 2023 - Present) Tj
+0 -15 Td
+(- Assisted in monitoring security alerts and conducting initial triage) Tj
+0 -15 Td
+(- Performed vulnerability scans and documented findings) Tj
+0 -15 Td
+(- Contributed to the development of security awareness training materials) Tj
+0 -40 Td
+/F1 16 Tf
+(PROJECTS) Tj
+/F1 12 Tf
+0 -20 Td
+(Network Traffic Analysis Tool) Tj
+0 -15 Td
+(- Developed a Python tool to analyze network traffic for suspicious patterns) Tj
+0 -15 Td
+(- Implemented machine learning algorithms to detect anomalies) Tj
+0 -20 Td
+(CTF Competitions) Tj
+0 -15 Td
+(- Participated in 5+ Capture The Flag competitions) Tj
+0 -15 Td
+(- Specialized in cryptography and web application security challenges) Tj
+ET
+endstream
+endobj
+
+6 0 obj
+[/PDF /Text]
+endobj
+
+7 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+
+xref
+0 8
+0000000000 65535 f
+0000000009 00000 n
+0000000074 00000 n
+0000000120 00000 n
+0000000179 00000 n
+0000000322 00000 n
+0000001374 00000 n
+0000001404 00000 n
+trailer
+<< /Size 8
+/Root 1 0 R
+>>
+startxref
+1511
+%%EOF
