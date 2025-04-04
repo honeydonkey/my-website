@@ -2,10 +2,8 @@
   "name": "cybersecurity-portfolio-final",
   "version": "1.0.0",
   "description": "A modern, interactive cybersecurity portfolio website with a black and purple aesthetic theme",
-  "main": "index.html",
   "scripts": {
-    "start": "serve",
-    "build": "mkdir -p public && cp -r index.html 404.html projects resume .gitignore README.md public/"
+    "build": "echo 'No build step required'"
   },
   "keywords": [
     "cybersecurity",
@@ -16,25 +14,5 @@
     "ai-security"
   ],
   "author": "Marianne Wong",
-  "license": "MIT",
-  "devDependencies": {
-    "serve": "^14.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mariannewong/cybersecurity-portfolio-final"
-  },
-  "bugs": {
-    "url": "https://github.com/mariannewong/cybersecurity-portfolio-final/issues"
-  },
-  "homepage": "https://mariannewong.com",
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "license": "MIT"
 }

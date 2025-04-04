@@ -47,47 +47,75 @@ CyberSecPortfolio-Final/
 
 ## Deployment on Vercel
 
-This portfolio is configured for easy deployment on Vercel. Follow these steps to deploy:
+This portfolio is configured for easy deployment on Vercel using a simplified approach. Follow these steps to deploy:
+
+### Method 1: Using the Vercel Dashboard (Recommended)
 
 1. Create a Vercel account at [vercel.com](https://vercel.com) if you don't have one
-2. Install the Vercel CLI:
+2. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+3. Go to [vercel.com/new](https://vercel.com/new)
+4. Import your repository
+5. In the "Build and Output Settings" section:
+   - Leave the build command empty or set it to `npm run build`
+   - Set the output directory to `public`
+6. Click "Deploy"
+
+### Method 2: Using the Deployment Script (Easiest)
+
+This repository includes a deployment script that automates the process:
+
+1. Make the script executable:
+   ```
+   chmod +x deploy.sh
+   ```
+2. Run the script:
+   ```
+   ./deploy.sh
+   ```
+3. The script will:
+   - Check if Vercel CLI is installed and install it if needed
+   - Create the public directory and copy all necessary files
+   - Ask if you want to deploy to Vercel immediately
+   - Guide you through the deployment process
+
+### Method 3: Using the Vercel CLI Manually
+
+1. Install the Vercel CLI:
    ```
    npm install -g vercel
    ```
-3. Login to Vercel from the command line:
+2. Login to Vercel from the command line:
    ```
    vercel login
    ```
-4. Navigate to the project directory and run:
+3. Navigate to the project directory and run:
    ```
-   vercel
+   vercel --prod
    ```
-5. Follow the prompts to complete the deployment
+4. When prompted, select the following options:
+   - Set the output directory to `public`
+   - Confirm the deployment
 
-Alternatively, you can deploy directly from the Vercel dashboard:
+### Important Notes for Deployment
 
-1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import your project from GitHub, GitLab, or Bitbucket
-3. Vercel will automatically detect the project type and configure the build settings
-4. Click "Deploy" to publish your portfolio
+This portfolio uses a simplified deployment approach to avoid common Vercel deployment issues:
 
-### Deployment Configuration
+1. **Public Directory Structure**: All deployable files are in the `public` directory. This is where Vercel will look for files to serve.
 
-The deployment configuration is handled by the `vercel.json` file, which includes:
-- Static site configuration with `outputDirectory` set to "public"
-- Custom routing rules
-- 404 page handling
-- Security headers
+2. **Minimal Configuration**: The `vercel.json` file has been simplified to include only the essential configuration:
+   ```json
+   {
+     "version": 2,
+     "public": true
+   }
+   ```
 
-### Troubleshooting Deployment Issues
+3. **No Complex Build Process**: The package.json file has a minimal build script that doesn't require any build tools.
 
-If you encounter a "Missing public directory" error during deployment, the issue is related to Vercel's build process. This portfolio has been configured to resolve this issue by:
-
-1. Setting `"outputDirectory": "public"` in vercel.json
-2. Adding a build script in package.json that copies all necessary files to the public directory
-3. Ensuring the build process creates the expected directory structure
-
-The build script (`npm run build`) will create a public directory containing all the files needed for deployment. Vercel will then serve the files from this directory.
+If you encounter any deployment issues, make sure:
+- The `public` directory exists and contains all necessary files (HTML, CSS, images, etc.)
+- You've specified `public` as the output directory in your Vercel deployment settings
+- Your vercel.json file is correctly formatted
 
 ## Customization
 
